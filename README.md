@@ -179,8 +179,8 @@ Evaluation claims are intentionally separated:
   backend and independent reference raw queries agreed on an empty selection;
   nonempty retrieval and meaningful aggregate accuracy remain unverified.
 
-The sanitized operational record keeps the empty-selection run separate from a
-later single-preview attempt that stopped before model or query execution:
+The sanitized operational record keeps the empty-selection run separate from
+later bounded preview attempts that stopped before model or query execution:
 
 - [Real BigQuery verification evidence](evaluations/public/real_bigquery_verification_2026-10-13.md)
 

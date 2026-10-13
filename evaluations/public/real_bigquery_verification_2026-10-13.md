@@ -46,6 +46,33 @@ Prerequisites passed: repaired dotenv configuration, ADC resolution, local Ollam
 
 The single-preview budget was not retried. No preview values were retained or exposed, and no exploratory query replaced the failed preview.
 
+## Run 3: corrected preview-order attempt
+
+Label: `real_bigquery_nonempty_v3_2026-10-13`
+
+- Tested commit: `93a0f88`
+- Offline suite: 87 passed, including two preview-order regressions
+- Prerequisites: repaired configuration, ADC, metadata, tracing controls,
+  `llama3.2:latest`, and process-scoped role overrides all passed
+
+| Category | Outcome |
+|---|---|
+| Preview calls | 1 table preview, capped at 100 rows and three necessary fields |
+| Preview field construction | PASS; fields were filtered from fresh physical schema metadata in physical order |
+| Preview decoding | PASS; the SDK returned decoded rows without the prior type-conversion failure |
+| Selection outcome | BLOCKED after preview: the temporary runner requested a local schema-context dictionary key under the wrong name before selection scanning began |
+| Model calls | 0 |
+| Backend dry runs / live `SELECT`s | 0 / 0 |
+| Reference dry runs / live `SELECT`s | 0 / 0 |
+| Query processed bytes | 0; no query jobs were submitted |
+| Database modifications | 0 |
+| Overall | SELECTION BLOCKED |
+
+The single-preview budget was not retried. Preview rows remained in process
+memory only and were neither retained nor exposed. This run verifies the local
+preview-order correction, but it does not establish a demonstrably nonempty
+selection or exercise the natural-language graph.
+
 ## Supported claim
 
-The evidence establishes that the real BigQuery execution boundary can authenticate and complete bounded read-only queries, including an empty raw selection and its aggregate/reference queries. It does **not** establish successful nonempty raw retrieval, a meaningful average comparison, or end-to-end execution through the natural-language graph. Those remain operational verification gaps.
+The evidence establishes that the real BigQuery execution boundary can authenticate and complete bounded read-only queries, including an empty raw selection and its aggregate/reference queries. It also establishes offline and live-preview correction of the selected-field ordering defect. It does **not** establish successful nonempty raw retrieval, a meaningful average comparison, or end-to-end execution through the natural-language graph. Those remain operational verification gaps.

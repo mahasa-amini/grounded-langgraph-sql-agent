@@ -23,12 +23,13 @@ Release preparation repeated installation in a newly created Python 3.13.13 virt
 The current deterministic compiler is exercised by semantic tests covering raw and aggregate projections, grouping, ordering, distinct, HAVING, limits, typed filters/literals, half-open time predicates, invalid plans, safety routing, and proof that the SQL model is not invoked.
 
 The [sanitized real-BigQuery record](../evaluations/public/real_bigquery_verification_2026-10-13.md)
-documents two distinct runs without combining their outcomes. The first reached
+documents distinct runs without combining their outcomes. The first reached
 the production compiler, safety, execution, and formatting stages with bounded
-real `SELECT` queries, but selected no rows. The second confirmed the required
-local model was available, then stopped after its sole bounded preview could
-not establish a usable selection. Consequently, end-to-end nonempty execution
-through the natural-language graph remains an open verification item.
+real `SELECT` queries, but selected no rows. Later runs confirmed the required
+local model was available and verified the preview field-order correction, but
+each exhausted its sole preview before establishing a usable selection.
+Consequently, end-to-end nonempty execution through the natural-language graph
+remains an open verification item.
 
 The two supplementary replacement conversations in the current compiler run both passed their fixed expectations:
 
