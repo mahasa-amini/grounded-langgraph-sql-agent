@@ -7,7 +7,10 @@ The repository retains several kinds of evidence that should not be conflated:
 1. Offline `unittest` runs validate application logic with mocked LLM/database boundaries.
 2. Real-Ollama runs exercise installed local models for classification, evidence extraction, and schema mapping.
 3. Labelled execution-stub runs validate routing through deterministic compilation and SQL safety without database access.
-4. Real database execution would require explicit credentials and BigQuery access; the retained release evidence does not demonstrate it.
+4. Real database execution requires explicit credentials and BigQuery access.
+   The bounded 2026-10-13 operational evidence demonstrates read-only execution
+   on an empty selection, but not nonempty retrieval or meaningful aggregate
+   accuracy.
 
 Deterministic safeguards can prevent unsafe state mutation when a model response is invalid. A safeguard success is not model-accuracy evidence. Similarly, a stub response is synthetic and is not proof of real query correctness or real data quality.
 
@@ -18,6 +21,14 @@ The complete offline suite run on 2026-10-12 recorded 85 passed, 0 failed, and 0
 Release preparation repeated installation in a newly created Python 3.13.13 virtual environment using only `requirements.txt`. Installation completed successfully, `python -m pip check` reported no broken requirements, both graph entry points imported, the synthetic demo completed, and the full suite again recorded 85 passed, 0 failed, and 0 skipped. Package-index access is required for a genuinely fresh install unless the dependencies are already cached.
 
 The current deterministic compiler is exercised by semantic tests covering raw and aggregate projections, grouping, ordering, distinct, HAVING, limits, typed filters/literals, half-open time predicates, invalid plans, safety routing, and proof that the SQL model is not invoked.
+
+The [sanitized real-BigQuery record](../evaluations/public/real_bigquery_verification_2026-10-13.md)
+documents two distinct runs without combining their outcomes. The first reached
+the production compiler, safety, execution, and formatting stages with bounded
+real `SELECT` queries, but selected no rows. The second confirmed the required
+local model was available, then stopped after its sole bounded preview could
+not establish a usable selection. Consequently, end-to-end nonempty execution
+through the natural-language graph remains an open verification item.
 
 The two supplementary replacement conversations in the current compiler run both passed their fixed expectations:
 

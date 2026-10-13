@@ -41,7 +41,10 @@ Current intentional limitations:
 - No typed time-bucket contract. Bucketed time-series requests are rejected rather than silently degraded.
 - Chart payload creation only; no chart rendering or frontend integration.
 - Model interpretation remains sensitive to the installed model and can require clarification or fail safely.
-- The retained reports do not establish successful real BigQuery execution.
+- A bounded 2026-10-13 operational run reached the real BigQuery execution
+  boundary with two backend and two reference `SELECT` queries. The raw
+  selection was empty, so this proves read-only execution reachability but not
+  nonempty retrieval or meaningful aggregate accuracy.
 
 The authoritative schema and capability declarations are in [`schema/`](schema/).
 
@@ -172,7 +175,14 @@ Evaluation claims are intentionally separated:
 - **Offline tests** verify deterministic parsing, lifecycle, reducers, compilation, safety routing, and output contracts with mocks.
 - **Real-model runs** measure local Ollama interpretation and mapping behavior; deterministic safeguards are not counted as model accuracy.
 - **Labelled-stub runs** exercise the graph through SQL validation but do not execute BigQuery or validate real rows.
-- **Database execution** has not been verified by the retained release evidence.
+- **Database execution** has been reached in a bounded real-BigQuery run. Its
+  backend and independent reference raw queries agreed on an empty selection;
+  nonempty retrieval and meaningful aggregate accuracy remain unverified.
+
+The sanitized operational record keeps the empty-selection run separate from a
+later single-preview attempt that stopped before model or query execution:
+
+- [Real BigQuery verification evidence](evaluations/public/real_bigquery_verification_2026-10-13.md)
 
 The latest deterministic-compiler replacement run completed both supplementary scenarios, made 15 non-SQL model calls, made zero SQL-model calls, reached the labelled execution stub twice, and recorded zero database attempts:
 
