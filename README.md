@@ -1,21 +1,61 @@
 # Grounded LangGraph SQL Agent
 
+[![Offline backend tests](https://github.com/mahasa-amini/grounded-langgraph-sql-agent/actions/workflows/offline-tests.yml/badge.svg)](https://github.com/mahasa-amini/grounded-langgraph-sql-agent/actions/workflows/offline-tests.yml)
+
 A backend reference project for turning natural-language sensor-data questions into validated, read-only BigQuery SQL. It demonstrates LangChain structured outputs, LangGraph conversation state, schema-grounded request mapping, deterministic SQL compilation, fail-closed SQL validation, and structured text/chart response contracts.
 
 This repository contains the Python backend only. It does not provide a web UI or render charts.
 
+## Verified engineering outcomes
+
+| Outcome | Evidence |
+|---|---|
+| Repeatable offline verification | **95 tests passed**, including lifecycle, compiler, SQL-safety, output, and whole-runner regressions; [CI workflow](.github/workflows/offline-tests.yml) |
+| Real BigQuery integration | **Nonempty raw flow retrieval and scalar average aggregation** matched independent reference queries through the actual natural-language graph on 2026-10-13 |
+| Reliable SQL construction | Validated typed plans compile through a deterministic BigQuery AST builder; the normal graph makes **no SQL-model call** |
+| Request replacement | Two recorded conversations cleared stale location, chart, and aggregation state and reached the labelled execution stub |
+| Bounded live verification | Four live read-only SELECTs, each preceded by a dry run and capped at 100 MiB; **zero database modifications** |
+
+The live result is evidence for the two recorded requests and their frozen selection, not a general model-accuracy benchmark. The offline suite, synthetic demo, and live verification test different boundaries.
+
+See [real BigQuery evidence](evaluations/public/real_bigquery_verification_2026-10-13.md) and [replacement evidence](evaluations/public/replacement_paths_2026-10-12_deterministic_sql_173646_llama3_2_latest.public.md).
+
 ## What the backend does
 
-The active request path is:
+The overview below groups the active-request path. General chat, schema questions, cancellation, and goodbye routes are expanded in the [message-routing diagram](docs/architecture.md#message-routing).
 
-```text
-LLM classification, evidence extraction, and schema mapping
-    -> deterministic validation and lifecycle rules
-    -> validated typed query plan
-    -> deterministic BigQuery SQL compiler
-    -> mandatory SQL safety validation
-    -> database execution boundary
-    -> deterministic text response or chart payload
+```mermaid
+flowchart TD
+    U["User message"] --> R["Classify message"]
+    R -->|Unclear relationship| Q["Ask relationship question"]
+    R -->|Request or update| L["Apply request lifecycle"]
+    L -->|Rejected transition| Q
+    L -->|Accepted transition| E["Extract request evidence"]
+    Q --> W["End turn; retain pending request"]
+    E --> T["Normalize time"]
+    T --> M["Map evidence to schema"]
+    M --> G["Validate and merge mapping"]
+    G --> C{"Request complete?"}
+    C -->|No| A["Ask for missing information"]
+    A --> W
+    C -->|Yes| P["Validated typed query plan"]
+    P --> S["Compile BigQuery SQL"]
+    S --> V{"SQL safety passes?"}
+    V -->|No| X["Reject execution"]
+    X --> W
+    V -->|Yes| B["Execute read-only BigQuery query"]
+    B --> O["Build text response or chart payload"]
+    O --> D["Mark request done"]
+    D --> W
+
+    classDef model fill:#dbeafe,stroke:#2563eb,color:#172554
+    classDef code fill:#dcfce7,stroke:#15803d,color:#14532d
+    classDef gate fill:#fef3c7,stroke:#d97706,color:#78350f
+    classDef reject fill:#fee2e2,stroke:#dc2626,color:#7f1d1d
+    class R,E,M model
+    class L,T,G,P,S,B,O,D code
+    class C,V gate
+    class X reject
 ```
 
 The model interprets language; it does not write the SQL used by the normal supported path. `SQL_MODEL` remains a configuration field for the retained diagnostic-only legacy SQL chain, but it is not invoked by normal deterministic compilation.
@@ -41,10 +81,6 @@ Current intentional limitations:
 - No typed time-bucket contract. Bucketed time-series requests are rejected rather than silently degraded.
 - Chart payload creation only; no chart rendering or frontend integration.
 - Model interpretation remains sensitive to the installed model and can require clarification or fail safely.
-- A bounded 2026-10-13 opt-in run verified nonempty raw retrieval and scalar
-  average aggregation through the complete natural-language graph against
-  independently authored BigQuery references. The earlier empty-selection and
-  stopped preview attempts remain separately recorded.
 
 The authoritative schema and capability declarations are in [`schema/`](schema/).
 
@@ -154,12 +190,7 @@ env -i PATH=/usr/bin:/bin:/usr/sbin:/sbin \
   -m unittest discover -s /path/to/grounded-sql-agent/tests -v
 ```
 
-On 2026-10-12, the established environment completed **85 tests: 85 passed, 0 failed, 0 skipped**. These tests establish deterministic application behavior with mocked model/database boundaries; they do not establish real-model accuracy or database connectivity.
-
-After adding the repeatable BigQuery verifier, the 2026-10-13 complete offline
-suite completed **95 tests: 95 passed, 0 failed, 0 skipped**, including eight
-whole-runner regressions with synthetic SDK responses and guarded model/cloud
-boundaries.
+The 2026-10-13 complete offline suite passed **95 tests: 95 passed, 0 failed, 0 skipped**, including eight whole-runner regressions with synthetic SDK responses and guarded model/cloud boundaries. These tests verify application behavior with mocks; real-model and database evidence are recorded separately.
 
 CI runs the same offline suite on Python 3.13 using [`.github/workflows/offline-tests.yml`](.github/workflows/offline-tests.yml).
 
@@ -196,7 +227,7 @@ The latest deterministic-compiler replacement run completed both supplementary s
 - [Public human-readable replacement report](evaluations/public/replacement_paths_2026-10-12_deterministic_sql_173646_llama3_2_latest.public.md)
 - [Public redacted replacement JSON trace](evaluations/public/replacement_paths_2026-10-12_deterministic_sql_173646_llama3_2_latest.public.json)
 
-Those two successful runs demonstrate active-request replacement for their fixed inputs only. They do not imply that every conversation scenario passes.
+Those two successful supplementary scenarios demonstrate active-request replacement for their fixed inputs only. They do not imply that every conversation scenario passes.
 
 Earlier comparison and SQL-replay reports are historical evidence from a different, model-generated SQL path or from pre-fix behavior. They remain useful diagnostic records but should not be presented as validation of the current deterministic compiler. See [Evaluation guide](docs/evaluation.md).
 
