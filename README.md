@@ -41,10 +41,10 @@ Current intentional limitations:
 - No typed time-bucket contract. Bucketed time-series requests are rejected rather than silently degraded.
 - Chart payload creation only; no chart rendering or frontend integration.
 - Model interpretation remains sensitive to the installed model and can require clarification or fail safely.
-- A bounded 2026-10-13 operational run reached the real BigQuery execution
-  boundary with two backend and two reference `SELECT` queries. The raw
-  selection was empty, so this proves read-only execution reachability but not
-  nonempty retrieval or meaningful aggregate accuracy.
+- A bounded 2026-10-13 opt-in run verified nonempty raw retrieval and scalar
+  average aggregation through the complete natural-language graph against
+  independently authored BigQuery references. The earlier empty-selection and
+  stopped preview attempts remain separately recorded.
 
 The authoritative schema and capability declarations are in [`schema/`](schema/).
 
@@ -156,6 +156,11 @@ env -i PATH=/usr/bin:/bin:/usr/sbin:/sbin \
 
 On 2026-10-12, the established environment completed **85 tests: 85 passed, 0 failed, 0 skipped**. These tests establish deterministic application behavior with mocked model/database boundaries; they do not establish real-model accuracy or database connectivity.
 
+After adding the repeatable BigQuery verifier, the 2026-10-13 complete offline
+suite completed **95 tests: 95 passed, 0 failed, 0 skipped**, including eight
+whole-runner regressions with synthetic SDK responses and guarded model/cloud
+boundaries.
+
 CI runs the same offline suite on Python 3.13 using [`.github/workflows/offline-tests.yml`](.github/workflows/offline-tests.yml).
 
 ## Backend-only synthetic demo
@@ -175,12 +180,14 @@ Evaluation claims are intentionally separated:
 - **Offline tests** verify deterministic parsing, lifecycle, reducers, compilation, safety routing, and output contracts with mocks.
 - **Real-model runs** measure local Ollama interpretation and mapping behavior; deterministic safeguards are not counted as model accuracy.
 - **Labelled-stub runs** exercise the graph through SQL validation but do not execute BigQuery or validate real rows.
-- **Database execution** has been reached in a bounded real-BigQuery run. Its
-  backend and independent reference raw queries agreed on an empty selection;
-  nonempty retrieval and meaningful aggregate accuracy remain unverified.
+- **Database execution** was verified in a bounded real-BigQuery run for both
+  nonempty raw retrieval and scalar average aggregation through the actual
+  natural-language graph, with independent reference agreement. This is a
+  narrow operational result for the frozen selection, not a general accuracy
+  claim.
 
-The sanitized operational record keeps the empty-selection run separate from
-later bounded preview attempts that stopped before model or query execution:
+The sanitized operational record keeps the successful run separate from the
+earlier empty-selection and stopped preview attempts:
 
 - [Real BigQuery verification evidence](evaluations/public/real_bigquery_verification_2026-10-13.md)
 

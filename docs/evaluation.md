@@ -8,9 +8,9 @@ The repository retains several kinds of evidence that should not be conflated:
 2. Real-Ollama runs exercise installed local models for classification, evidence extraction, and schema mapping.
 3. Labelled execution-stub runs validate routing through deterministic compilation and SQL safety without database access.
 4. Real database execution requires explicit credentials and BigQuery access.
-   The bounded 2026-10-13 operational evidence demonstrates read-only execution
-   on an empty selection, but not nonempty retrieval or meaningful aggregate
-   accuracy.
+   A bounded 2026-10-13 run verified nonempty raw retrieval and scalar average
+   aggregation through the natural-language graph against independent
+   references, while preserving earlier attempts as separate outcomes.
 
 Deterministic safeguards can prevent unsafe state mutation when a model response is invalid. A safeguard success is not model-accuracy evidence. Similarly, a stub response is synthetic and is not proof of real query correctness or real data quality.
 
@@ -24,12 +24,11 @@ The current deterministic compiler is exercised by semantic tests covering raw a
 
 The [sanitized real-BigQuery record](../evaluations/public/real_bigquery_verification_2026-10-13.md)
 documents distinct runs without combining their outcomes. The first reached
-the production compiler, safety, execution, and formatting stages with bounded
-real `SELECT` queries, but selected no rows. Later runs confirmed the required
-local model was available and verified the preview field-order correction, but
-each exhausted its sole preview before establishing a usable selection.
-Consequently, end-to-end nonempty execution through the natural-language graph
-remains an open verification item.
+real bounded execution on an empty selection; two later attempts stopped after
+their sole preview. The newest repeatable-runner attempt used the actual schema
+loader and graph, selected a preview-demonstrated historical UTC day, and
+matched nonempty raw and non-null average results to independently authored
+references.
 
 The two supplementary replacement conversations in the current compiler run both passed their fixed expectations:
 
@@ -54,6 +53,17 @@ The offline demo is deterministic fixture playback. It validates its fixture, co
 
 Real-Ollama evaluation is optional and intentionally not a CI job. Before running any evaluation script, inspect its fixed scenarios, model identity checks, database guards, timeout, explicit configuration, and artifact naming. Do not treat generic evaluation scripts as authorization to access a database.
 
+The persistent opt-in runner is
+[`scripts/real_bigquery_verification.py`](../scripts/real_bigquery_verification.py).
+It validates configuration, the exact `public_schema_context` loader contract,
+catalog mappings, physical field types/order, and table location before its
+single bounded preview. Live use requires the explicit
+`RUN_REAL_BIGQUERY_VERIFICATION=1` gate, a labelled attempt and tested commit,
+the authorized local model overrides, normal ADC, and a private ignored report
+path. It enforces one 100-row/three-field preview, two backend plus two reference
+queries, a dry run before each, 100 MiB caps, bounded timeouts, and disabled RPC
+and job retries. It is intentionally absent from offline CI.
+
 ## Release decisions
 
 The owner made these decisions for the first public backend release:
@@ -63,4 +73,6 @@ The owner made these decisions for the first public backend release:
 3. Diagnostic logs and historical private reports remain excluded; only the two explicitly public Markdown/JSON reports are included.
 4. Environment-specific BigQuery defaults in `app/config.py` were replaced with generic example values while preserving environment-variable overrides.
 
-Real BigQuery execution is an operational validation gap, not a prerequisite for presenting the repository as an offline-safe backend engineering portfolio project, provided the limitation remains explicit.
+The real-BigQuery result is narrow operational evidence for the tested table,
+selection, requests, model, and commit. Offline CI remains credential-free and
+does not reproduce that live claim.

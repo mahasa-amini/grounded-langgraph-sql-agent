@@ -73,6 +73,44 @@ memory only and were neither retained nor exposed. This run verifies the local
 preview-order correction, but it does not establish a demonstrably nonempty
 selection or exercise the natural-language graph.
 
+## Run 4: repeatable-runner nonempty verification
+
+Label: `real-bigquery-nonempty-repeatable-run-2026-10-13`
+
+- Runner version: `1.0.0`
+- Tested backend commit: `7f7a983`
+- Offline suite before live access: 95 passed, 0 failed, 0 skipped
+- Prerequisites: actual loader contract, non-placeholder local configuration,
+  ADC, metadata/type/location checks, required installed local model, and
+  process-scoped temperature-zero role overrides all passed
+
+| Category | Outcome |
+|---|---|
+| Preview calls | 1 table preview, capped at 100 rows and the three necessary fields |
+| Preview outcome | PASS; 100 in-memory rows scanned and a supported historical UTC day with non-null flow was frozen |
+| Local model calls | 6 total: classification, evidence, and mapping for each of two requests; SQL compilation remained deterministic |
+| Backend dry runs / live `SELECT`s | 2 / 2 |
+| Reference dry runs / live `SELECT`s | 2 / 2 |
+| Raw retrieval | PASS; nonempty backend output matched the independently authored reference with explicit tie handling |
+| Average aggregation | PASS; a meaningful non-null result matched the independent reference within explicit numeric tolerance |
+| Backend live processed bytes | Raw: 10,136; average: 24,731 |
+| Reference live processed bytes | Raw: 10,136; average: 10,136 |
+| Response formatting | PASS for both real results |
+| Automatic retries / permanent destinations | 0 / none |
+| Database modifications | 0 |
+| Overall | PASS |
+
+Preview rows and query results remained in process memory only. The private
+selection token and cloud/job metadata remain in the ignored review area; no
+company row, measurement value, or private cloud identifier is published.
+
 ## Supported claim
 
-The evidence establishes that the real BigQuery execution boundary can authenticate and complete bounded read-only queries, including an empty raw selection and its aggregate/reference queries. It also establishes offline and live-preview correction of the selected-field ordering defect. It does **not** establish successful nonempty raw retrieval, a meaningful average comparison, or end-to-end execution through the natural-language graph. Those remain operational verification gaps.
+The evidence establishes that the frozen runner and backend commit completed
+nonempty raw flow retrieval and scalar average aggregation on real BigQuery
+through classification, evidence extraction, schema mapping, deterministic SQL
+compilation, mandatory validation, the real execution wrapper, and deterministic
+response formatting. Both results matched independently authored references.
+This is bounded evidence for the recorded requests and selection, not a claim of
+general model accuracy or unrestricted database compatibility. Runs 1–3 remain
+unchanged and must not be merged with this successful attempt.
