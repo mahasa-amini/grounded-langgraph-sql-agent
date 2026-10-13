@@ -46,6 +46,8 @@ def decode_preview_row_by_name(row: Any) -> dict[str, Any]:
         raise ValueError("Preview district did not decode as text")
     if not isinstance(decoded["timestamp"], datetime):
         raise ValueError("Preview timestamp did not decode as datetime")
-    if isinstance(decoded["value"], bool) or not isinstance(decoded["value"], Real):
+    if decoded["value"] is not None and (
+        isinstance(decoded["value"], bool) or not isinstance(decoded["value"], Real)
+    ):
         raise ValueError("Preview value did not decode as numeric")
     return decoded
