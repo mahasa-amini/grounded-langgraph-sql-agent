@@ -231,6 +231,7 @@ class GuardedBackendClient:
             job_config=dry_config,
             location=self._location,
             retry=None,
+            job_retry=None,
             timeout=QUERY_TIMEOUT_SECONDS,
         )
         processed = int(getattr(dry, "total_bytes_processed", 0) or 0)
@@ -248,6 +249,7 @@ class GuardedBackendClient:
             job_config=live_config,
             location=self._location,
             retry=None,
+            job_retry=None,
             timeout=QUERY_TIMEOUT_SECONDS,
         )
         rows = list(live.result(timeout=QUERY_TIMEOUT_SECONDS, retry=None))
@@ -329,7 +331,10 @@ def _run_reference(client: Any, sql: str, params: list[Any], ledger: QueryLedger
         maximum_bytes_billed=MAXIMUM_BYTES_BILLED, query_parameters=params,
     )
     ledger.reserve("reference", dry_run=True)
-    dry = client.query(sql, job_config=dry_config, location=location, retry=None, timeout=QUERY_TIMEOUT_SECONDS)
+    dry = client.query(
+        sql, job_config=dry_config, location=location, retry=None, job_retry=None,
+        timeout=QUERY_TIMEOUT_SECONDS,
+    )
     if int(getattr(dry, "total_bytes_processed", 0) or 0) > MAXIMUM_BYTES_BILLED:
         raise VerificationError("reference dry run exceeds the 100 MiB cap")
     ledger.reserve("reference", dry_run=False)
@@ -337,7 +342,10 @@ def _run_reference(client: Any, sql: str, params: list[Any], ledger: QueryLedger
         use_query_cache=False, use_legacy_sql=False,
         maximum_bytes_billed=MAXIMUM_BYTES_BILLED, query_parameters=params,
     )
-    live = client.query(sql, job_config=live_config, location=location, retry=None, timeout=QUERY_TIMEOUT_SECONDS)
+    live = client.query(
+        sql, job_config=live_config, location=location, retry=None, job_retry=None,
+        timeout=QUERY_TIMEOUT_SECONDS,
+    )
     rows = [dict(row) for row in live.result(timeout=QUERY_TIMEOUT_SECONDS, retry=None)]
     ledger.reference_processed_bytes.append(int(getattr(live, "total_bytes_processed", 0) or 0))
     return rows

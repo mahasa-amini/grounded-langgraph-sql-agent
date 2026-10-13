@@ -68,9 +68,9 @@ class FakeClient:
             raise AssertionError("preview boundary was not bounded")
         return self.preview_rows
 
-    def query(self, sql, *, job_config, location, retry, timeout):
+    def query(self, sql, *, job_config, location, retry, job_retry, timeout):
         self.query_calls.append((sql, job_config.dry_run, retry, timeout, job_config))
-        if retry is not None or job_config.maximum_bytes_billed != MAXIMUM_BYTES_BILLED:
+        if retry is not None or job_retry is not None or job_config.maximum_bytes_billed != MAXIMUM_BYTES_BILLED:
             raise AssertionError("query retry/cap boundary was not enforced")
         if job_config.destination is not None:
             raise AssertionError("permanent destination is forbidden")
