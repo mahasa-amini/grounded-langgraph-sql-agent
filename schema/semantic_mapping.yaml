@@ -1,0 +1,166 @@
+business_terms:
+  flow:
+    kind: metric
+    description: Water flow measurement.
+    table: sensor_measurements
+    metric_column: value
+    time_column: timestamp
+    synonyms:
+      - flow
+      - water flow
+      - flow rate
+      - sensor value
+      - measurement value
+    filters: []
+
+  incoming_flow:
+    kind: metric
+    description: Incoming water flow measurement.
+    table: sensor_measurements
+    metric_column: value
+    time_column: timestamp
+    synonyms:
+      - incoming flow
+      - inflow
+      - input flow
+      - incomingflow
+    filters:
+      - column: type
+        operator: "="
+        value: flow_in
+
+  sensor:
+    kind: dimension
+    description: Sensor identifier.
+    table: sensor_measurements
+    column: sensor_id
+    synonyms:
+      - sensor
+      - sensor id
+      - device
+      - device id
+
+  city:
+    kind: dimension
+    description: City filter.
+    table: sensor_measurements
+    column: city
+    synonyms:
+      - city
+      - town
+      - municipality
+
+  district:
+    kind: dimension
+    description: District or area filter.
+    table: sensor_measurements
+    column: district
+    synonyms:
+      - district
+      - area
+      - zone
+      - neighborhood
+
+  measurement_type:
+    kind: dimension
+    description: Measurement type filter.
+    table: sensor_measurements
+    column: type
+    synonyms:
+      - type
+      - measurement type
+      - flow type
+
+locations:
+  cities:
+    Marene:
+      canonical_value: Marene
+      synonyms:
+        - Marene
+      districts:
+        - Salza
+        - Marconi
+        - Concentrico
+        - Ponte
+        - Rame
+        - Sperina
+        - Pellaverne
+
+  districts:
+    Salza:
+      canonical_value: Salza
+      city: Marene
+      synonyms:
+        - Salza
+
+    Marconi:
+      canonical_value: Marconi
+      city: Marene
+      synonyms:
+        - Marconi
+
+    Concentrico:
+      canonical_value: Concentrico
+      city: Marene
+      synonyms:
+        - Concentrico
+
+    Ponte:
+      canonical_value: Ponte
+      city: Marene
+      synonyms:
+        - Ponte
+
+    Rame:
+      canonical_value: Rame
+      city: Marene
+      synonyms:
+        - Rame
+
+    Sperina:
+      canonical_value: Sperina
+      city: Marene
+      synonyms:
+        - Sperina
+
+    Pellaverne:
+      canonical_value: Pellaverne
+      city: Marene
+      synonyms:
+        - Pellaverne
+
+measurement_types:
+  flow_in:
+    canonical_value: flow_in
+    table: sensor_measurements
+    column: type
+    synonyms:
+      - flow_in
+      - inflow
+      - incoming flow
+      - input flow
+      - incomingflow
+
+chart_terms:
+  line:
+    chart_type: line
+    synonyms:
+      - line chart
+      - line graph
+      - linear chart
+      - trend
+      - time series
+
+  bar:
+    chart_type: bar
+    synonyms:
+      - bar chart
+      - bar graph
+      - column chart
+
+  table:
+    chart_type: table
+    synonyms:
+      - table
+      - tabular result
+      - raw data

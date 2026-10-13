@@ -1,0 +1,105 @@
+defaults:
+  table: sensor_measurements
+  metric_column: value
+  time_column: timestamp
+  default_limit: 1000
+  default_order_by: timestamp ASC
+
+requirements:
+  retrieve_data:
+    required_slots:
+      - metric_column
+      - time_range
+
+    required_entity_groups:
+      location:
+        any_of:
+          - city
+          - district
+
+    optional_slots:
+
+      - sensor_id
+      - type
+      - aggregation
+      - group_by
+      - limit
+
+  chart:
+    required_slots:
+      - metric_column
+      - time_range
+      - chart_type
+
+    required_entity_groups:
+      location:
+        any_of:
+          - city
+          - district
+
+    default_x_axis: timestamp
+    default_y_axis: value
+
+    supported_chart_types:
+      - line
+      - bar
+      - table
+
+  text:
+    required_slots:
+      - metric_column
+      - time_range
+
+    required_entity_groups:
+      location:
+        any_of:
+          - city
+          - district
+
+aggregations:
+  supported:
+    - avg
+    - sum
+    - min
+    - max
+    - count
+
+filters:
+  supported_operators:
+    - "="
+    - "!="
+    - ">"
+    - ">="
+    - "<"
+    - "<="
+    - "IN"
+    - "BETWEEN"
+
+entity_resolution:
+  fuzzy_match:
+    enabled: true
+    min_similarity: 0.88
+    auto_apply: false
+    max_suggestions: 3
+
+  ambiguity:
+    treat_fuzzy_matches_as_ambiguous: true
+    require_user_confirmation_for_fuzzy_match: true
+
+  locations:
+    city_column: city
+    district_column: district
+    allow_city_only_filter: true
+    allow_district_only_filter: true
+    add_parent_city_filter_for_district: false
+    reject_city_district_mismatch: true
+
+  unsupported_terms:
+    include_unsupported_metrics: true
+    include_unsupported_locations: true
+    include_unsupported_measurement_types: true
+
+safety:
+  max_limit: 5000
+  require_limit: true
+  allow_only_select: true

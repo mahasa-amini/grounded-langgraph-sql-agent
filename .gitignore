@@ -1,0 +1,67 @@
+# Environment files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*credentials*.json
+*service-account*.json
+
+# Python virtual environments
+venv/
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Python tooling cache
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# LangGraph local runtime/cache
+.langgraph_api/
+*.pckl
+*.pickle
+*.sqlite
+*.sqlite3
+
+# Node / frontend dependencies and build outputs
+# The first release is backend-only.
+/agent-chat-app/
+
+# Logs
+*.log
+logs/
+/evaluations/*.md
+/evaluations/*.json
+/evaluations/*.jsonl
+!/evaluations/public/
+!/evaluations/public/*.md
+!/evaluations/public/*.json
+
+# Local-only connectivity and legacy manual utilities
+/scripts/test_bigquery_connection.py
+/scripts/test_interrupt_resume.py
+/scripts/test_sql_generation_chain.py
+
+# Local/private datasets and exports (synthetic fixtures belong under tests/fixtures/)
+data/
+datasets/
+exports/
+*.csv
+*.parquet
+*.avro
+
+# Editor/project-local state
+.idea/
+.vscode/
+.release-review/
+
+# OS / editor files
+.DS_Store
+Thumbs.db

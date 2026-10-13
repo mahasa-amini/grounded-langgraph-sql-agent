@@ -1,0 +1,79 @@
+tables:
+  sensor_measurements:
+    description: >
+      Time-series sensor measurements for water flow in the city of Marene.
+      Each row represents a timestamped measurement from one sensor in one district.
+
+    columns:
+      sensor_id:
+        type: string
+        description: Unique identifier of the sensor.
+        examples:
+          - MAR_DC_SLZ_FLW_01
+          - MAR_D_MRC_FLW_01
+          - MAR_DC_CNT_FLW_01
+
+      timestamp:
+        type: datetime
+        description: Measurement timestamp in UTC.
+        examples:
+          - "2023-07-13 22:00:00.000000 UTC"
+          - "2023-07-13 22:15:00.000000 UTC"
+
+      type:
+        type: string
+        description: Measurement type.
+        examples:
+          - flow_in
+
+      value:
+        type: float
+        description: Numeric sensor measurement value.
+        examples:
+          - 11.425
+          - 1.850
+          - 0.286
+
+      city:
+        type: string
+        description: City where the sensor is located.
+        examples:
+          - Marene
+
+      district:
+        type: string
+        description: District or area where the sensor is located.
+        examples:
+          - Salza
+          - Marconi
+          - Concentrico
+          - Ponte
+          - Rame
+          - Sperina
+          - Pellaverne
+
+    primary_time_column: timestamp
+
+    default_metric_column: value
+
+    default_select_columns:
+      - timestamp
+      - value
+
+    allowed_filter_columns:
+      - sensor_id
+      - type
+      - city
+      - district
+      - timestamp
+      - value
+
+    allowed_group_by_columns:
+      - sensor_id
+      - type
+      - city
+      - district
+
+    allowed_order_by_columns:
+      - timestamp
+      - value

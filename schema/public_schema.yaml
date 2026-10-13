@@ -1,0 +1,98 @@
+dataset:
+  name: Water flow sensor measurements
+  description: >
+    This dataset contains time-series water flow measurements from sensors
+    located in districts of the city of Marene.
+
+user_facing_concepts:
+  time:
+    label: time
+    description: The time when each measurement was recorded.
+    internal_column: timestamp
+
+  flow:
+    label: water flow
+    description: The base measurable metric in the dataset. It represents recorded water flow measurements over time.
+    internal_column: value
+    synonyms:
+      - flow
+      - water flow
+      - flow rate
+      - measurement
+      - sensor value
+
+  city:
+    label: city
+    description: The city where the sensor is located.
+    internal_column: city
+    values:
+      - Marene
+
+  district:
+    label: district
+    description: The district or area where the sensor is located.
+    internal_column: district
+    values:
+      - Salza
+      - Marconi
+      - Concentrico
+      - Ponte
+      - Rame
+      - Sperina
+      - Pellaverne
+
+  sensor:
+    label: sensor
+    description: A sensor that records flow measurements.
+    internal_column: sensor_id
+
+  measurement_type:
+    label: measurement type
+    description: The type of measurement available in the dataset.
+    internal_column: type
+    values:
+      - flow_in
+
+queryable_metrics:
+  - concept: flow
+    label: water flow
+    internal_column: value
+    synonyms:
+      - flow
+      - water flow
+      - flow rate
+      - measurement
+      - sensor value
+
+supported_outputs:
+  data:
+    description: Textual or tabular data results.
+
+  chart:
+    description: Visual chart requests based on the available water flow data.
+    chart_types:
+      - line
+      - bar
+      - table
+
+supported_question_topics:
+  - available districts
+  - available cities
+  - available metrics
+  - available sensors
+  - available chart types
+  - example questions
+  - supported filters
+
+example_user_requests:
+  - Show flow in Marconi for the last 7 days.
+  - Show a line chart of flow in Salza for the last 24 hours.
+  - Compare flow between Marconi and Ponte for the last 7 days.
+  - Show average flow by district for last month.
+  - Show maximum flow in Marconi yesterday.
+
+privacy_rules:
+  - Do not expose internal column names unless the user explicitly asks for technical schema details.
+  - Prefer user-facing labels such as time, flow, district, city, and sensor.
+  - Answer only the schema topic the user asked about.
+  - Keep answers concise.

@@ -1,0 +1,3794 @@
+{
+  "contract": "supplementary_replacement_paths_v1",
+  "database_attempts": 0,
+  "elapsed_seconds": 117.93780974999754,
+  "exact_command": "[REDACTED IN PUBLIC COPY: local paths and evaluation-only configuration]",
+  "expected_contract": {
+    "pass_requirements": {
+      "completion": "Safe SQL contains value, Ponte, and the exclusive UTC date interval, then reaches only the labelled evaluation stub.",
+      "replacement": "Fresh lifecycle text is the Ponte request; stale chart, aggregation, location, clarification count, SQL/results, and ambiguity are cleared.",
+      "setup": "Initial chart request is collecting with line, avg, and Marconi."
+    },
+    "scenario_a": {
+      "direct_branch": "If turn 2 validly starts the fresh request, skip the relationship choice and send the date next.",
+      "relationship_branch": "If turn 2 saves the new message and asks the relationship question, send the exact offered new-request choice, then the date.",
+      "turns": [
+        "Show a line chart of average flow in Marconi.",
+        "Show flow in Ponte.",
+        "Start a new request.",
+        "2026-05-10"
+      ]
+    },
+    "scenario_b": {
+      "turns": [
+        "Show a line chart of average flow in Marconi.",
+        "Start a new request: show flow in Ponte on 2026-05-10."
+      ]
+    }
+  },
+  "model": {
+    "digest": "sha256-dde5aa3fc5ffc17176b5e8bdc82f587b24b2678c6c66101bf7da77af9f7ccdff",
+    "id": "a80c4f17acd5",
+    "quantization": "Q4_K_M",
+    "tag": "llama3.2:latest"
+  },
+  "model_calls": {
+    "by_node": {
+      "classify_user_message": 5,
+      "extract_request_evidence": 5,
+      "map_to_schema": 5
+    },
+    "events": [
+      {
+        "model": null,
+        "node": "classify_user_message",
+        "prompt_count": 1,
+        "run_id": "01a130c2-84d8-7563-a4e1-06a4b1cae052"
+      },
+      {
+        "model": null,
+        "node": "extract_request_evidence",
+        "prompt_count": 1,
+        "run_id": "01a130c2-b66d-7513-b4a3-acad43cba6a7"
+      },
+      {
+        "model": null,
+        "node": "map_to_schema",
+        "prompt_count": 1,
+        "run_id": "01a130c2-c7ff-7842-b4a2-d2b7a605e9eb"
+      },
+      {
+        "model": null,
+        "node": "classify_user_message",
+        "prompt_count": 1,
+        "run_id": "01a130c3-2e62-7643-bf55-122d8ddfbb9b"
+      },
+      {
+        "model": null,
+        "node": "extract_request_evidence",
+        "prompt_count": 1,
+        "run_id": "01a130c3-3976-7c71-803d-5bb45946f74c"
+      },
+      {
+        "model": null,
+        "node": "map_to_schema",
+        "prompt_count": 1,
+        "run_id": "01a130c3-3fac-7313-83a5-6d055dbcb979"
+      },
+      {
+        "model": null,
+        "node": "classify_user_message",
+        "prompt_count": 1,
+        "run_id": "01a130c3-73e1-7a73-b895-9619896f432e"
+      },
+      {
+        "model": null,
+        "node": "extract_request_evidence",
+        "prompt_count": 1,
+        "run_id": "01a130c3-7fbf-7c90-ae63-0e404f1c6102"
+      },
+      {
+        "model": null,
+        "node": "map_to_schema",
+        "prompt_count": 1,
+        "run_id": "01a130c3-8604-72b3-af78-ef4da9981038"
+      },
+      {
+        "model": null,
+        "node": "classify_user_message",
+        "prompt_count": 1,
+        "run_id": "01a130c3-bd27-7673-8ea2-3982e3744e0e"
+      },
+      {
+        "model": null,
+        "node": "extract_request_evidence",
+        "prompt_count": 1,
+        "run_id": "01a130c3-c6c0-7671-9636-d2bded284f5b"
+      },
+      {
+        "model": null,
+        "node": "map_to_schema",
+        "prompt_count": 1,
+        "run_id": "01a130c3-cd65-7e63-a9d0-6ede9152bf15"
+      },
+      {
+        "model": null,
+        "node": "classify_user_message",
+        "prompt_count": 1,
+        "run_id": "01a130c4-0375-7f33-85a6-15982c71e560"
+      },
+      {
+        "model": null,
+        "node": "extract_request_evidence",
+        "prompt_count": 1,
+        "run_id": "01a130c4-0ee8-7880-8782-47663d801f99"
+      },
+      {
+        "model": null,
+        "node": "map_to_schema",
+        "prompt_count": 1,
+        "run_id": "01a130c4-1630-7bb1-8e83-cd5455a9023f"
+      }
+    ],
+    "sql_generation": 0,
+    "total": 15
+  },
+  "roles": {
+    "answer": "llama3.2:latest",
+    "clarification": "llama3.2:latest",
+    "interpret": "llama3.2:latest",
+    "mapping": "llama3.2:latest",
+    "sql": "llama3.2:latest"
+  },
+  "run_id": "2026-10-12_deterministic_sql_173646",
+  "scenarios": [
+    {
+      "assessment": {
+        "branch": "relationship_clarification",
+        "canonical_actions": [
+          {
+            "action": "new_request",
+            "safeguard": "idle_request_initialization",
+            "turn": 1
+          },
+          {
+            "action": "invalid",
+            "safeguard": null,
+            "turn": 2
+          },
+          {
+            "action": "new_request_from_ambiguous",
+            "safeguard": "exact_ambiguity_resolution",
+            "turn": 3
+          },
+          {
+            "action": "clarification_answer",
+            "safeguard": "pending_bare_date_clarification",
+            "turn": 4
+          }
+        ],
+        "completion": {
+          "conversation_history_preserved": true,
+          "date_applied_to_fresh_request": true,
+          "exclusive_end": true,
+          "inclusive_start": true,
+          "labelled_stub_reached": true,
+          "old_average_not_inherited": true,
+          "requested_location": true,
+          "requested_metric": true,
+          "sql_generated": true,
+          "sql_safety_passed": true
+        },
+        "date_clarification_turns": 1,
+        "fresh_initialization": {
+          "clarification_answers_reset": true,
+          "clarification_count_reset": true,
+          "fresh_data_request": true,
+          "marconi_not_mapped_after_replay": true,
+          "old_aggregation_cleared": true,
+          "old_chart_cleared": true,
+          "old_location_cleared": true,
+          "old_result_cleared": true,
+          "old_sql_cleared": true,
+          "pending_ambiguity_cleared": true,
+          "ponte_mapped_after_replay": true,
+          "resolution_sentence_not_replayed": true,
+          "saved_or_explicit_request_used": true
+        },
+        "passed": true,
+        "raw_model_accuracy": [
+          {
+            "applicable": true,
+            "raw_action": "none",
+            "turn": 1
+          },
+          {
+            "applicable": true,
+            "raw_action": "none",
+            "turn": 2
+          },
+          {
+            "applicable": false,
+            "raw_action": null,
+            "turn": 3
+          },
+          {
+            "applicable": true,
+            "raw_action": "new_request",
+            "turn": 4
+          }
+        ],
+        "relationship_clarification_turns": 1,
+        "setup_passed": true,
+        "state_preservation": {
+          "conversation_history_preserved": true,
+          "new_message_saved": true,
+          "old_aggregation_preserved_while_unresolved": true,
+          "old_chart_preserved_while_unresolved": true,
+          "old_location_preserved_while_unresolved": true,
+          "old_request_preserved_while_unresolved": true
+        }
+      },
+      "branch": "relationship_clarification",
+      "name": "scenario_a",
+      "turns": [
+        {
+          "after": {
+            "active_request_text": "Show a line chart of average flow in Marconi.",
+            "active_request_type": "chart",
+            "aggregation": "avg",
+            "chart_type": "line",
+            "clarification_answers": [],
+            "clarification_count": 1,
+            "clarification_question": "I need a time range to query value for district=Marconi. For example: last 7 days, last 24 hours, last month, or a specific date range.",
+            "classification_safeguard": "idle_request_initialization",
+            "filters": [
+              {
+                "column": "district",
+                "operator": "=",
+                "value": "Marconi"
+              }
+            ],
+            "group_by": [],
+            "mapping_input_text": "Show a line chart of average flow in Marconi.",
+            "metric_column": "value",
+            "missing_slots": [
+              "time_range"
+            ],
+            "model_classification": {
+              "active_request_action": "none",
+              "confidence": 1.0,
+              "correction_targets": [],
+              "message_type": "chart_request",
+              "reason": "new_request",
+              "resolved_request_type": "chart"
+            },
+            "output_type": "chart",
+            "pending_ambiguous_correction_targets": [],
+            "pending_ambiguous_message": null,
+            "raw_metric": "flow",
+            "request_status": "collecting",
+            "sql_is_safe": false,
+            "sql_query": null,
+            "time_range": null,
+            "unsupported_terms": []
+          },
+          "assistant_response": "I need a time range to query value for district=Marconi. For example: last 7 days, last 24 hours, last month, or a specific date range.",
+          "before": {},
+          "classification": {
+            "active_request_action": "new_request",
+            "classification_error": null,
+            "classification_reason": "new_request",
+            "classification_safeguard": "idle_request_initialization",
+            "classification_valid": true,
+            "classified_request_type": "chart",
+            "correction_targets": [],
+            "model_classification": {
+              "active_request_action": "none",
+              "confidence": 1.0,
+              "correction_targets": [],
+              "message_type": "chart_request",
+              "reason": "new_request",
+              "resolved_request_type": "chart"
+            },
+            "pending_ambiguous_correction_targets": [],
+            "pending_ambiguous_request_type": null,
+            "user_message_type": "chart_request"
+          },
+          "elapsed_seconds": 43.41482491699935,
+          "error": null,
+          "execution_label": null,
+          "generated_sql": null,
+          "lifecycle": {
+            "active_request_action": "none",
+            "active_request_text": "Show a line chart of average flow in Marconi.",
+            "active_request_type": "chart",
+            "aggregation": null,
+            "ambiguous_terms": [],
+            "chart_payload": null,
+            "chart_type": null,
+            "clarification_answers": [],
+            "clarification_count": 0,
+            "clarification_question": null,
+            "classification_error": null,
+            "classification_valid": true,
+            "classified_request_type": null,
+            "correction_targets": [],
+            "distinct": false,
+            "error": null,
+            "evidence_suggestions": {},
+            "execution_error": null,
+            "filters": [],
+            "final_answer": null,
+            "group_by": [],
+            "having_conditions": [],
+            "intent": null,
+            "is_complete": false,
+            "limit": null,
+            "mapping_input_text": "Show a line chart of average flow in Marconi.",
+            "metric_column": null,
+            "missing_slots": [],
+            "order_by": null,
+            "output_type": "chart",
+            "parsed_time_range": null,
+            "pending_ambiguous_correction_targets": [],
+            "pending_ambiguous_message": null,
+            "pending_ambiguous_request_type": null,
+            "query_result": null,
+            "raw_metric": null,
+            "request_evidence": null,
+            "request_status": "collecting",
+            "request_transition_valid": true,
+            "required_slots": [],
+            "selected_columns": [],
+            "sql_compilation_errors": [],
+            "sql_explanation": null,
+            "sql_generation_provenance": null,
+            "sql_is_safe": false,
+            "sql_query": null,
+            "sql_validation_errors": [],
+            "table_name": null,
+            "time_column": null,
+            "time_range": null,
+            "unsupported_terms": []
+          },
+          "mapping": {
+            "active_request_type": "chart",
+            "aggregation": "avg",
+            "ambiguous_terms": [],
+            "chart_type": "line",
+            "correction_targets": [],
+            "distinct": false,
+            "error": null,
+            "evidence_suggestions": {},
+            "filters": [
+              {
+                "column": "district",
+                "operator": "=",
+                "value": "Marconi"
+              }
+            ],
+            "group_by": [],
+            "having_conditions": [],
+            "limit": 1000,
+            "mapping_input_text": "Show a line chart of average flow in Marconi.",
+            "metric_column": "value",
+            "missing_slots": [],
+            "order_by": null,
+            "output_type": "chart",
+            "raw_metric": "flow",
+            "selected_columns": [],
+            "table_name": "sensor_measurements",
+            "time_column": "timestamp",
+            "time_range": null,
+            "unsupported_terms": []
+          },
+          "observability": [
+            {
+              "input": {
+                "active_request_text": null,
+                "active_request_type": null,
+                "clarification_question": null,
+                "collected_fields": {
+                  "aggregation": null,
+                  "chart_type": null,
+                  "filters": [],
+                  "group_by": [],
+                  "limit": null,
+                  "metric_column": null,
+                  "order_by": null,
+                  "output_type": null,
+                  "raw_metric": null,
+                  "time_range": null
+                },
+                "latest_user_message": "Show a line chart of average flow in Marconi.",
+                "missing_slots": [],
+                "pending_ambiguous_message": null,
+                "recent_turns": [
+                  {
+                    "content": "Show a line chart of average flow in Marconi.",
+                    "role": "human"
+                  }
+                ],
+                "request_status": "idle"
+              },
+              "stage": "classifier_input"
+            },
+            {
+              "canonical": {
+                "active_request_action": "new_request",
+                "confidence": 1.0,
+                "correction_targets": [],
+                "message_type": "chart_request",
+                "reason": "new_request",
+                "resolved_request_type": "chart"
+              },
+              "parsed": {
+                "active_request_action": "none",
+                "confidence": 1.0,
+                "correction_targets": [],
+                "message_type": "chart_request",
+                "reason": "new_request",
+                "resolved_request_type": "chart"
+              },
+              "parsing_error": null,
+              "raw": {
+                "additional_kwargs": {},
+                "content": "{\n  \"message_type\": \"chart_request\",\n  \"reason\": \"new_request\",\n  \"confidence\": 1.0,\n  \"active_request_action\": \"none\",\n  \"correction_targets\": [],\n  \"resolved_request_type\": \"chart\"\n}",
+                "id": "lc_run--01a130c2-84d8-7563-a4e1-06a4b1cae052-0",
+                "invalid_tool_calls": [],
+                "name": null,
+                "response_metadata": {
+                  "created_at": "2026-10-12T15:37:09.405233Z",
+                  "done": true,
+                  "done_reason": "stop",
+                  "eval_count": 54,
+                  "eval_duration": 1543945000,
+                  "load_duration": 5391754292,
+                  "logprobs": null,
+                  "model": "llama3.2:latest",
+                  "model_name": "llama3.2:latest",
+                  "model_provider": "ollama",
+                  "prompt_eval_count": 2005,
+                  "prompt_eval_duration": 5633349000,
+                  "total_duration": 12591847417
+                },
+                "tool_calls": [],
+                "type": "ai",
+                "usage_metadata": {
+                  "input_tokens": 2005,
+                  "output_tokens": 54,
+                  "total_tokens": 2059
+                }
+              },
+              "safeguard": "idle_request_initialization",
+              "stage": "classifier_output"
+            },
+            {
+              "route": "data_or_chart_request",
+              "stage": "chosen_route"
+            },
+            {
+              "stage": "lifecycle_update",
+              "update": {
+                "active_request_action": "none",
+                "active_request_text": "Show a line chart of average flow in Marconi.",
+                "active_request_type": "chart",
+                "aggregation": null,
+                "ambiguous_terms": [],
+                "chart_payload": null,
+                "chart_type": null,
+                "clarification_answers": [],
+                "clarification_count": 0,
+                "clarification_question": null,
+                "classification_error": null,
+                "classification_valid": true,
+                "classified_request_type": null,
+                "correction_targets": [],
+                "distinct": false,
+                "error": null,
+                "evidence_suggestions": {},
+                "execution_error": null,
+                "filters": [],
+                "final_answer": null,
+                "group_by": [],
+                "having_conditions": [],
+                "intent": null,
+                "is_complete": false,
+                "limit": null,
+                "mapping_input_text": "Show a line chart of average flow in Marconi.",
+                "metric_column": null,
+                "missing_slots": [],
+                "order_by": null,
+                "output_type": "chart",
+                "parsed_time_range": null,
+                "pending_ambiguous_correction_targets": [],
+                "pending_ambiguous_message": null,
+                "pending_ambiguous_request_type": null,
+                "query_result": null,
+                "raw_metric": null,
+                "request_evidence": null,
+                "request_status": "collecting",
+                "request_transition_valid": true,
+                "required_slots": [],
+                "selected_columns": [],
+                "sql_compilation_errors": [],
+                "sql_explanation": null,
+                "sql_generation_provenance": null,
+                "sql_is_safe": false,
+                "sql_query": null,
+                "sql_validation_errors": [],
+                "table_name": null,
+                "time_column": null,
+                "time_range": null,
+                "unsupported_terms": []
+              }
+            },
+            {
+              "input": {
+                "active_request_type": "chart",
+                "classification_reason": "new_request",
+                "latest_user_message": "Show a line chart of average flow in Marconi.",
+                "mapping_input_text": "Show a line chart of average flow in Marconi.",
+                "missing_slots": [],
+                "output_type": "chart"
+              },
+              "stage": "evidence_input"
+            },
+            {
+              "bare_date_parser_result": null,
+              "canonical": {
+                "aggregation_conflict": null,
+                "aggregation_phrase": "avg",
+                "chart_phrase": "line chart",
+                "location_phrases": [
+                  "Marconi"
+                ],
+                "metric_phrase": "flow",
+                "time_fallback_result": {
+                  "parsed": null,
+                  "phrase": null,
+                  "status": "not_found"
+                },
+                "time_phrase": null,
+                "time_phrase_provenance": null
+              },
+              "parsed": {
+                "aggregation_phrase": "average",
+                "chart_phrase": "line chart",
+                "location_phrases": [
+                  "Marconi"
+                ],
+                "metric_phrase": "average flow",
+                "time_phrase": null
+              },
+              "parsing_error": null,
+              "raw": {
+                "additional_kwargs": {},
+                "content": "{\n  \"metric_phrase\": \"average flow\",\n  \"location_phrases\": [\"Marconi\"],\n  \"time_phrase\": null,\n  \"aggregation_phrase\": \"average\",\n  \"chart_phrase\": \"line chart\"\n}",
+                "id": "lc_run--01a130c2-b66d-7513-b4a3-acad43cba6a7-0",
+                "invalid_tool_calls": [],
+                "name": null,
+                "response_metadata": {
+                  "created_at": "2026-10-12T15:37:13.954595Z",
+                  "done": true,
+                  "done_reason": "stop",
+                  "eval_count": 47,
+                  "eval_duration": 1204712000,
+                  "load_duration": 18712333,
+                  "logprobs": null,
+                  "model": "llama3.2:latest",
+                  "model_name": "llama3.2:latest",
+                  "model_provider": "ollama",
+                  "prompt_eval_count": 1156,
+                  "prompt_eval_duration": 3169748000,
+                  "total_duration": 4463957333
+                },
+                "tool_calls": [],
+                "type": "ai",
+                "usage_metadata": {
+                  "input_tokens": 1156,
+                  "output_tokens": 47,
+                  "total_tokens": 1203
+                }
+              },
+              "stage": "evidence_output",
+              "time_fallback_result": {
+                "parsed": null,
+                "phrase": null,
+                "status": "not_found"
+              },
+              "time_phrase_provenance": null
+            },
+            {
+              "input": null,
+              "result": null,
+              "stage": "time_parser"
+            }
+          ],
+          "setup_checks": [
+            {
+              "description": "request is collecting",
+              "passed": true
+            },
+            {
+              "description": "active request exists",
+              "passed": true
+            },
+            {
+              "description": "old request is a chart",
+              "passed": true
+            },
+            {
+              "description": "old chart type is line",
+              "passed": true
+            },
+            {
+              "description": "old aggregation is average",
+              "passed": true
+            },
+            {
+              "description": "old location is Marconi",
+              "passed": true
+            }
+          ],
+          "stage_timings": [
+            {
+              "event": "start",
+              "node": "load_schema_context"
+            },
+            {
+              "elapsed_seconds": 0.007631207998201717,
+              "event": "complete",
+              "node": "load_schema_context"
+            },
+            {
+              "event": "start",
+              "node": "receive_user_message"
+            },
+            {
+              "elapsed_seconds": 0.00010679199840524234,
+              "event": "complete",
+              "node": "receive_user_message"
+            },
+            {
+              "event": "start",
+              "node": "classify_user_message"
+            },
+            {
+              "elapsed_seconds": 12.659796708998329,
+              "event": "complete",
+              "node": "classify_user_message"
+            },
+            {
+              "event": "start",
+              "node": "early_sql_safety_check"
+            },
+            {
+              "elapsed_seconds": 0.0036981250013923272,
+              "event": "complete",
+              "node": "early_sql_safety_check"
+            },
+            {
+              "event": "start",
+              "node": "start_or_update_active_request"
+            },
+            {
+              "elapsed_seconds": 0.0004747499988297932,
+              "event": "complete",
+              "node": "start_or_update_active_request"
+            },
+            {
+              "event": "start",
+              "node": "interpret_user_request"
+            },
+            {
+              "elapsed_seconds": 0.0004652499992516823,
+              "event": "complete",
+              "node": "interpret_user_request"
+            },
+            {
+              "event": "start",
+              "node": "extract_request_evidence"
+            },
+            {
+              "elapsed_seconds": 4.523229667000123,
+              "event": "complete",
+              "node": "extract_request_evidence"
+            },
+            {
+              "event": "start",
+              "node": "parse_time_phrase"
+            },
+            {
+              "elapsed_seconds": 0.0006058750004740432,
+              "event": "complete",
+              "node": "parse_time_phrase"
+            },
+            {
+              "event": "start",
+              "node": "pre_validate_request_evidence"
+            },
+            {
+              "elapsed_seconds": 0.011047375002817716,
+              "event": "complete",
+              "node": "pre_validate_request_evidence"
+            },
+            {
+              "event": "start",
+              "node": "map_to_schema"
+            },
+            {
+              "elapsed_seconds": 26.187374375000218,
+              "event": "complete",
+              "node": "map_to_schema"
+            },
+            {
+              "event": "start",
+              "node": "validate_mapped_state"
+            },
+            {
+              "elapsed_seconds": 0.000925832999200793,
+              "event": "complete",
+              "node": "validate_mapped_state"
+            },
+            {
+              "event": "start",
+              "node": "merge_extracted_info"
+            },
+            {
+              "elapsed_seconds": 0.0002341660001548007,
+              "event": "complete",
+              "node": "merge_extracted_info"
+            },
+            {
+              "event": "start",
+              "node": "check_completeness"
+            },
+            {
+              "elapsed_seconds": 0.00041937499918276444,
+              "event": "complete",
+              "node": "check_completeness"
+            },
+            {
+              "event": "start",
+              "node": "check_clarification_limit"
+            },
+            {
+              "elapsed_seconds": 0.00041608299943618476,
+              "event": "complete",
+              "node": "check_clarification_limit"
+            },
+            {
+              "event": "start",
+              "node": "answer_clarification"
+            },
+            {
+              "elapsed_seconds": 0.00023800000053597614,
+              "event": "complete",
+              "node": "answer_clarification"
+            },
+            {
+              "event": "start",
+              "node": "wait_for_next_message"
+            },
+            {
+              "elapsed_seconds": 0.0001677920008660294,
+              "event": "complete",
+              "node": "wait_for_next_message"
+            }
+          ],
+          "turn": 1,
+          "user_input": "Show a line chart of average flow in Marconi."
+        },
+        {
+          "after": {
+            "active_request_text": "Show a line chart of average flow in Marconi.",
+            "active_request_type": "chart",
+            "aggregation": "avg",
+            "chart_type": "line",
+            "clarification_answers": [],
+            "clarification_count": 1,
+            "clarification_question": "I need a time range to query value for district=Marconi. For example: last 7 days, last 24 hours, last month, or a specific date range.",
+            "classification_safeguard": null,
+            "filters": [
+              {
+                "column": "district",
+                "operator": "=",
+                "value": "Marconi"
+              }
+            ],
+            "group_by": [],
+            "mapping_input_text": "Show a line chart of average flow in Marconi.",
+            "metric_column": "value",
+            "missing_slots": [
+              "time_range"
+            ],
+            "model_classification": {
+              "active_request_action": "none",
+              "confidence": 0.99,
+              "correction_targets": [],
+              "message_type": "data_request",
+              "reason": "new_request",
+              "resolved_request_type": "data"
+            },
+            "output_type": "chart",
+            "pending_ambiguous_correction_targets": [],
+            "pending_ambiguous_message": "Show flow in Ponte.",
+            "raw_metric": "flow",
+            "request_status": "collecting",
+            "sql_is_safe": false,
+            "sql_query": null,
+            "time_range": null,
+            "unsupported_terms": []
+          },
+          "assistant_response": "Do you want to apply \"Show flow in Ponte.\" to the current request, or start a new request?",
+          "before": {
+            "active_request_text": "Show a line chart of average flow in Marconi.",
+            "active_request_type": "chart",
+            "aggregation": "avg",
+            "chart_type": "line",
+            "clarification_answers": [],
+            "clarification_count": 1,
+            "clarification_question": "I need a time range to query value for district=Marconi. For example: last 7 days, last 24 hours, last month, or a specific date range.",
+            "classification_safeguard": "idle_request_initialization",
+            "filters": [
+              {
+                "column": "district",
+                "operator": "=",
+                "value": "Marconi"
+              }
+            ],
+            "group_by": [],
+            "mapping_input_text": "Show a line chart of average flow in Marconi.",
+            "metric_column": "value",
+            "missing_slots": [
+              "time_range"
+            ],
+            "model_classification": {
+              "active_request_action": "none",
+              "confidence": 1.0,
+              "correction_targets": [],
+              "message_type": "chart_request",
+              "reason": "new_request",
+              "resolved_request_type": "chart"
+            },
+            "output_type": "chart",
+            "pending_ambiguous_correction_targets": [],
+            "pending_ambiguous_message": null,
+            "raw_metric": "flow",
+            "request_status": "collecting",
+            "sql_is_safe": false,
+            "sql_query": null,
+            "time_range": null,
+            "unsupported_terms": []
+          },
+          "classification": {
+            "active_request_action": "invalid",
+            "classification_error": "ValueError: none is incompatible with a request transition",
+            "classification_reason": "Classification could not safely determine the request relationship.",
+            "classification_safeguard": null,
+            "classification_valid": false,
+            "classified_request_type": null,
+            "correction_targets": [],
+            "model_classification": {
+              "active_request_action": "none",
+              "confidence": 0.99,
+              "correction_targets": [],
+              "message_type": "data_request",
+              "reason": "new_request",
+              "resolved_request_type": "data"
+            },
+            "pending_ambiguous_correction_targets": [],
+            "pending_ambiguous_message": "Show flow in Ponte.",
+            "pending_ambiguous_request_type": "data",
+            "user_message_type": "unclear"
+          },
+          "elapsed_seconds": 2.828397249999398,
+          "error": null,
+          "execution_label": null,
+          "generated_sql": null,
+          "lifecycle": null,
+          "mapping": null,
+          "observability": [
+            {
+              "input": {
+                "active_request_text": "Show a line chart of average flow in Marconi.",
+                "active_request_type": "chart",
+                "clarification_question": "I need a time range to query value for district=Marconi. For example: last 7 days, last 24 hours, last month, or a specific date range.",
+                "collected_fields": {
+                  "aggregation": "avg",
+                  "chart_type": "line",
+                  "filters": [
+                    {
+                      "column": "district",
+                      "operator": "=",
+                      "value": "Marconi"
+                    }
+                  ],
+                  "group_by": [],
+                  "limit": 1000,
+                  "metric_column": "value",
+                  "order_by": null,
+                  "output_type": "chart",
+                  "raw_metric": "flow",
+                  "time_range": null
+                },
+                "latest_user_message": "Show flow in Ponte.",
+                "missing_slots": [
+                  "time_range"
+                ],
+                "pending_ambiguous_message": null,
+                "recent_turns": [
+                  {
+                    "content": "Show a line chart of average flow in Marconi.",
+                    "role": "human"
+                  },
+                  {
+                    "content": "I need a time range to query value for district=Marconi. For example: last 7 days, last 24 hours, last month, or a specific date range.",
+                    "role": "ai"
+                  },
+                  {
+                    "content": "Show flow in Ponte.",
+                    "role": "human"
+                  }
+                ],
+                "request_status": "collecting"
+              },
+              "stage": "classifier_input"
+            },
+            {
+              "parsed": {
+                "active_request_action": "none",
+                "confidence": 0.99,
+                "correction_targets": [],
+                "message_type": "data_request",
+                "reason": "new_request",
+                "resolved_request_type": "data"
+              },
+              "parsing_error": "ValueError: none is incompatible with a request transition",
+              "raw": {
+                "additional_kwargs": {},
+                "content": "{\n  \"message_type\": \"data_request\",\n  \"reason\": \"new_request\",\n  \"confidence\": 0.99,\n  \"active_request_action\": \"none\",\n  \"correction_targets\": [],\n  \"resolved_request_type\": \"data\"\n}",
+                "id": "lc_run--01a130c3-2e62-7643-bf55-122d8ddfbb9b-0",
+                "invalid_tool_calls": [],
+                "name": null,
+                "response_metadata": {
+                  "created_at": "2026-10-12T15:37:42.979694Z",
+                  "done": true,
+                  "done_reason": "stop",
+                  "eval_count": 54,
+                  "eval_duration": 1557210000,
+                  "load_duration": 15429875,
+                  "logprobs": null,
+                  "model": "llama3.2:latest",
+                  "model_name": "llama3.2:latest",
+                  "model_provider": "ollama",
+                  "prompt_eval_count": 2134,
+                  "prompt_eval_duration": 873395000,
+                  "total_duration": 2784111458
+                },
+                "tool_calls": [],
+                "type": "ai",
+                "usage_metadata": {
+                  "input_tokens": 2134,
+                  "output_tokens": 54,
+                  "total_tokens": 2188
+                }
+              },
+              "stage": "classifier_output"
+            },
+            {
+              "reason": "invalid classification",
+              "route": "ambiguous_request_relationship",
+              "stage": "chosen_route"
+            },
+            {
+              "stage": "lifecycle_update",
+              "transition": "preserve_for_relationship_clarification",
+              "update": {
+                "conversation_status": "active",
+                "final_answer": "Do you want to apply \"Show flow in Ponte.\" to the current request, or start a new request?",
+                "messages": [
+                  "content='Do you want to apply \"Show flow in Ponte.\" to the current request, or start a new request?' additional_kwargs={} response_metadata={} id='7feac7b8-d860-4e06-b217-6d6b28718c66' tool_calls=[] invalid_tool_calls=[]"
+                ],
+                "pending_ambiguous_message": "Show flow in Ponte."
+              }
+            }
+          ],
+          "stage_timings": [
+            {
+              "event": "start",
+              "node": "load_schema_context"
+            },
+            {
+              "elapsed_seconds": 0.012250667001353577,
+              "event": "complete",
+              "node": "load_schema_context"
+            },
+            {
+              "event": "start",
+              "node": "receive_user_message"
+            },
+            {
+              "elapsed_seconds": 0.00012070800221408717,
+              "event": "complete",
+              "node": "receive_user_message"
+            },
+            {
+              "event": "start",
+              "node": "classify_user_message"
+            },
+            {
+              "elapsed_seconds": 2.802661082998384,
+              "event": "complete",
+              "node": "classify_user_message"
+            },
+            {
+              "event": "start",
+              "node": "early_sql_safety_check"
+            },
+            {
+              "elapsed_seconds": 0.002459374998579733,
+              "event": "complete",
+              "node": "early_sql_safety_check"
+            },
+            {
+              "event": "start",
+              "node": "ask_request_relationship"
+            },
+            {
+              "elapsed_seconds": 0.0005850000015925616,
+              "event": "complete",
+              "node": "ask_request_relationship"
+            },
+            {
+              "event": "start",
+              "node": "wait_for_next_message"
+            },
+            {
+              "elapsed_seconds": 0.000667959000566043,
+              "event": "complete",
+              "node": "wait_for_next_message"
+            }
+          ],
+          "turn": 2,
+          "user_input": "Show flow in Ponte."
+        },
+        {
+          "after": {
+            "active_request_text": "Show flow in Ponte.",
+            "active_request_type": "data",
+            "aggregation": null,
+            "chart_type": null,
+            "clarification_answers": [],
+            "clarification_count": 1,
+            "clarification_question": "I need a time range to query value for district=Ponte. For example: last 7 days, last 24 hours, last month, or a specific date range.",
+            "classification_safeguard": "exact_ambiguity_resolution",
+            "filters": [
+              {
+                "column": "district",
+                "operator": "=",
+                "value": "Ponte"
+              }
+            ],
+            "group_by": [],
+            "mapping_input_text": "Show flow in Ponte.",
+            "metric_column": "value",
+            "missing_slots": [
+              "time_range"
+            ],
+            "model_classification": null,
+            "output_type": "text",
+            "pending_ambiguous_correction_targets": [],
+            "pending_ambiguous_message": null,
+            "raw_metric": "flow",
+            "request_status": "collecting",
+            "sql_is_safe": false,
+            "sql_query": null,
+            "time_range": null,
+            "unsupported_terms": []
+          },
+          "assistant_response": "I need a time range to query value for district=Ponte. For example: last 7 days, last 24 hours, last month, or a specific date range.",
+          "before": {
+            "active_request_text": "Show a line chart of average flow in Marconi.",
+            "active_request_type": "chart",
+            "aggregation": "avg",
+            "chart_type": "line",
+            "clarification_answers": [],
+            "clarification_count": 1,
+            "clarification_question": "I need a time range to query value for district=Marconi. For example: last 7 days, last 24 hours, last month, or a specific date range.",
+            "classification_safeguard": null,
+            "filters": [
+              {
+                "column": "district",
+                "operator": "=",
+                "value": "Marconi"
+              }
+            ],
+            "group_by": [],
+            "mapping_input_text": "Show a line chart of average flow in Marconi.",
+            "metric_column": "value",
+            "missing_slots": [
+              "time_range"
+            ],
+            "model_classification": {
+              "active_request_action": "none",
+              "confidence": 0.99,
+              "correction_targets": [],
+              "message_type": "data_request",
+              "reason": "new_request",
+              "resolved_request_type": "data"
+            },
+            "output_type": "chart",
+            "pending_ambiguous_correction_targets": [],
+            "pending_ambiguous_message": "Show flow in Ponte.",
+            "raw_metric": "flow",
+            "request_status": "collecting",
+            "sql_is_safe": false,
+            "sql_query": null,
+            "time_range": null,
+            "unsupported_terms": []
+          },
+          "classification": {
+            "active_request_action": "new_request_from_ambiguous",
+            "classification_error": null,
+            "classification_reason": "Exact offered ambiguity resolution.",
+            "classification_safeguard": "exact_ambiguity_resolution",
+            "classification_valid": true,
+            "classified_request_type": "data",
+            "correction_targets": [],
+            "model_classification": null,
+            "user_message_type": "clarification_or_update"
+          },
+          "elapsed_seconds": 14.951631666001049,
+          "error": null,
+          "execution_label": null,
+          "generated_sql": null,
+          "lifecycle": {
+            "active_request_action": "none",
+            "active_request_text": "Show flow in Ponte.",
+            "active_request_type": "data",
+            "aggregation": null,
+            "ambiguous_terms": [],
+            "chart_payload": null,
+            "chart_type": null,
+            "clarification_answers": [],
+            "clarification_count": 0,
+            "clarification_question": null,
+            "classification_error": null,
+            "classification_valid": true,
+            "classified_request_type": null,
+            "correction_targets": [],
+            "distinct": false,
+            "error": null,
+            "evidence_suggestions": {},
+            "execution_error": null,
+            "filters": [],
+            "final_answer": null,
+            "group_by": [],
+            "having_conditions": [],
+            "intent": null,
+            "is_complete": false,
+            "limit": null,
+            "mapping_input_text": "Show flow in Ponte.",
+            "metric_column": null,
+            "missing_slots": [],
+            "order_by": null,
+            "output_type": "text",
+            "parsed_time_range": null,
+            "pending_ambiguous_correction_targets": [],
+            "pending_ambiguous_message": null,
+            "pending_ambiguous_request_type": null,
+            "query_result": null,
+            "raw_metric": null,
+            "request_evidence": null,
+            "request_status": "collecting",
+            "request_transition_valid": true,
+            "required_slots": [],
+            "selected_columns": [],
+            "sql_compilation_errors": [],
+            "sql_explanation": null,
+            "sql_generation_provenance": null,
+            "sql_is_safe": false,
+            "sql_query": null,
+            "sql_validation_errors": [],
+            "table_name": null,
+            "time_column": null,
+            "time_range": null,
+            "unsupported_terms": []
+          },
+          "mapping": {
+            "active_request_type": "data",
+            "aggregation": null,
+            "ambiguous_terms": [],
+            "chart_type": null,
+            "correction_targets": [],
+            "distinct": false,
+            "error": null,
+            "evidence_suggestions": {},
+            "filters": [
+              {
+                "column": "district",
+                "operator": "=",
+                "value": "Ponte"
+              }
+            ],
+            "group_by": [],
+            "having_conditions": [],
+            "limit": 1000,
+            "mapping_input_text": "Show flow in Ponte.",
+            "metric_column": "value",
+            "missing_slots": [],
+            "order_by": "timestamp ASC",
+            "output_type": "text",
+            "raw_metric": "flow",
+            "selected_columns": [
+              "timestamp",
+              "value"
+            ],
+            "table_name": "sensor_measurements",
+            "time_column": "timestamp",
+            "time_range": null,
+            "unsupported_terms": []
+          },
+          "observability": [
+            {
+              "input": {
+                "active_request_text": "Show a line chart of average flow in Marconi.",
+                "active_request_type": "chart",
+                "clarification_question": "I need a time range to query value for district=Marconi. For example: last 7 days, last 24 hours, last month, or a specific date range.",
+                "collected_fields": {
+                  "aggregation": "avg",
+                  "chart_type": "line",
+                  "filters": [
+                    {
+                      "column": "district",
+                      "operator": "=",
+                      "value": "Marconi"
+                    }
+                  ],
+                  "group_by": [],
+                  "limit": 1000,
+                  "metric_column": "value",
+                  "order_by": null,
+                  "output_type": "chart",
+                  "raw_metric": "flow",
+                  "time_range": null
+                },
+                "latest_user_message": "Start a new request.",
+                "missing_slots": [
+                  "time_range"
+                ],
+                "pending_ambiguous_message": "Show flow in Ponte.",
+                "recent_turns": [
+                  {
+                    "content": "I need a time range to query value for district=Marconi. For example: last 7 days, last 24 hours, last month, or a specific date range.",
+                    "role": "ai"
+                  },
+                  {
+                    "content": "Show flow in Ponte.",
+                    "role": "human"
+                  },
+                  {
+                    "content": "Do you want to apply \"Show flow in Ponte.\" to the current request, or start a new request?",
+                    "role": "ai"
+                  },
+                  {
+                    "content": "Start a new request.",
+                    "role": "human"
+                  }
+                ],
+                "request_status": "collecting"
+              },
+              "stage": "classifier_input"
+            },
+            {
+              "canonical": {
+                "active_request_action": "new_request_from_ambiguous",
+                "classification_error": null,
+                "classification_reason": "Exact offered ambiguity resolution.",
+                "classification_safeguard": "exact_ambiguity_resolution",
+                "classification_valid": true,
+                "classified_request_type": "data",
+                "correction_targets": [],
+                "model_classification": null,
+                "user_message_type": "clarification_or_update"
+              },
+              "parsed": null,
+              "parsing_error": null,
+              "raw": "unavailable: deterministic exact-choice classification",
+              "safeguard": "exact_ambiguity_resolution",
+              "stage": "classifier_output"
+            },
+            {
+              "route": "clarification_or_update",
+              "stage": "chosen_route"
+            },
+            {
+              "stage": "lifecycle_update",
+              "update": {
+                "active_request_action": "none",
+                "active_request_text": "Show flow in Ponte.",
+                "active_request_type": "data",
+                "aggregation": null,
+                "ambiguous_terms": [],
+                "chart_payload": null,
+                "chart_type": null,
+                "clarification_answers": [],
+                "clarification_count": 0,
+                "clarification_question": null,
+                "classification_error": null,
+                "classification_valid": true,
+                "classified_request_type": null,
+                "correction_targets": [],
+                "distinct": false,
+                "error": null,
+                "evidence_suggestions": {},
+                "execution_error": null,
+                "filters": [],
+                "final_answer": null,
+                "group_by": [],
+                "having_conditions": [],
+                "intent": null,
+                "is_complete": false,
+                "limit": null,
+                "mapping_input_text": "Show flow in Ponte.",
+                "metric_column": null,
+                "missing_slots": [],
+                "order_by": null,
+                "output_type": "text",
+                "parsed_time_range": null,
+                "pending_ambiguous_correction_targets": [],
+                "pending_ambiguous_message": null,
+                "pending_ambiguous_request_type": null,
+                "query_result": null,
+                "raw_metric": null,
+                "request_evidence": null,
+                "request_status": "collecting",
+                "request_transition_valid": true,
+                "required_slots": [],
+                "selected_columns": [],
+                "sql_compilation_errors": [],
+                "sql_explanation": null,
+                "sql_generation_provenance": null,
+                "sql_is_safe": false,
+                "sql_query": null,
+                "sql_validation_errors": [],
+                "table_name": null,
+                "time_column": null,
+                "time_range": null,
+                "unsupported_terms": []
+              }
+            },
+            {
+              "input": {
+                "active_request_type": "data",
+                "classification_reason": "Exact offered ambiguity resolution.",
+                "latest_user_message": "Start a new request.",
+                "mapping_input_text": "Show flow in Ponte.",
+                "missing_slots": [],
+                "output_type": "text"
+              },
+              "stage": "evidence_input"
+            },
+            {
+              "bare_date_parser_result": null,
+              "canonical": {
+                "aggregation_conflict": null,
+                "aggregation_phrase": null,
+                "chart_phrase": null,
+                "location_phrases": [
+                  "Ponte"
+                ],
+                "metric_phrase": "flow",
+                "time_fallback_result": {
+                  "parsed": null,
+                  "phrase": null,
+                  "status": "not_found"
+                },
+                "time_phrase": null,
+                "time_phrase_provenance": null
+              },
+              "parsed": {
+                "aggregation_phrase": null,
+                "chart_phrase": null,
+                "location_phrases": [
+                  "Ponte"
+                ],
+                "metric_phrase": "flow",
+                "time_phrase": null
+              },
+              "parsing_error": null,
+              "raw": {
+                "additional_kwargs": {},
+                "content": "{\n  \"metric_phrase\": \"flow\",\n  \"location_phrases\": [\"Ponte\"],\n  \"time_phrase\": null,\n  \"aggregation_phrase\": null,\n  \"chart_phrase\": null\n}",
+                "id": "lc_run--01a130c3-3976-7c71-803d-5bb45946f74c-0",
+                "invalid_tool_calls": [],
+                "name": null,
+                "response_metadata": {
+                  "created_at": "2026-10-12T15:37:44.600248Z",
+                  "done": true,
+                  "done_reason": "stop",
+                  "eval_count": 43,
+                  "eval_duration": 1101243000,
+                  "load_duration": 7567334,
+                  "logprobs": null,
+                  "model": "llama3.2:latest",
+                  "model_name": "llama3.2:latest",
+                  "model_provider": "ollama",
+                  "prompt_eval_count": 1147,
+                  "prompt_eval_duration": 301126000,
+                  "total_duration": 1568134542
+                },
+                "tool_calls": [],
+                "type": "ai",
+                "usage_metadata": {
+                  "input_tokens": 1147,
+                  "output_tokens": 43,
+                  "total_tokens": 1190
+                }
+              },
+              "stage": "evidence_output",
+              "time_fallback_result": {
+                "parsed": null,
+                "phrase": null,
+                "status": "not_found"
+              },
+              "time_phrase_provenance": null
+            },
+            {
+              "input": null,
+              "result": null,
+              "stage": "time_parser"
+            }
+          ],
+          "stage_timings": [
+            {
+              "event": "start",
+              "node": "load_schema_context"
+            },
+            {
+              "elapsed_seconds": 0.014111583001067629,
+              "event": "complete",
+              "node": "load_schema_context"
+            },
+            {
+              "event": "start",
+              "node": "receive_user_message"
+            },
+            {
+              "elapsed_seconds": 0.00013062500147498213,
+              "event": "complete",
+              "node": "receive_user_message"
+            },
+            {
+              "event": "start",
+              "node": "classify_user_message"
+            },
+            {
+              "elapsed_seconds": 0.0005130420031491667,
+              "event": "complete",
+              "node": "classify_user_message"
+            },
+            {
+              "event": "start",
+              "node": "early_sql_safety_check"
+            },
+            {
+              "elapsed_seconds": 0.0006626670001423918,
+              "event": "complete",
+              "node": "early_sql_safety_check"
+            },
+            {
+              "event": "start",
+              "node": "start_or_update_active_request"
+            },
+            {
+              "elapsed_seconds": 0.0002839170010702219,
+              "event": "complete",
+              "node": "start_or_update_active_request"
+            },
+            {
+              "event": "start",
+              "node": "interpret_user_request"
+            },
+            {
+              "elapsed_seconds": 0.0013598750010714866,
+              "event": "complete",
+              "node": "interpret_user_request"
+            },
+            {
+              "event": "start",
+              "node": "extract_request_evidence"
+            },
+            {
+              "elapsed_seconds": 1.57663733300069,
+              "event": "complete",
+              "node": "extract_request_evidence"
+            },
+            {
+              "event": "start",
+              "node": "parse_time_phrase"
+            },
+            {
+              "elapsed_seconds": 0.0012760829995386302,
+              "event": "complete",
+              "node": "parse_time_phrase"
+            },
+            {
+              "event": "start",
+              "node": "pre_validate_request_evidence"
+            },
+            {
+              "elapsed_seconds": 0.002212667001003865,
+              "event": "complete",
+              "node": "pre_validate_request_evidence"
+            },
+            {
+              "event": "start",
+              "node": "map_to_schema"
+            },
+            {
+              "elapsed_seconds": 13.334358041996893,
+              "event": "complete",
+              "node": "map_to_schema"
+            },
+            {
+              "event": "start",
+              "node": "validate_mapped_state"
+            },
+            {
+              "elapsed_seconds": 0.0007104169999365695,
+              "event": "complete",
+              "node": "validate_mapped_state"
+            },
+            {
+              "event": "start",
+              "node": "merge_extracted_info"
+            },
+            {
+              "elapsed_seconds": 0.0004185419966233894,
+              "event": "complete",
+              "node": "merge_extracted_info"
+            },
+            {
+              "event": "start",
+              "node": "check_completeness"
+            },
+            {
+              "elapsed_seconds": 0.0006824579977546819,
+              "event": "complete",
+              "node": "check_completeness"
+            },
+            {
+              "event": "start",
+              "node": "check_clarification_limit"
+            },
+            {
+              "elapsed_seconds": 0.0005381670016504359,
+              "event": "complete",
+              "node": "check_clarification_limit"
+            },
+            {
+              "event": "start",
+              "node": "answer_clarification"
+            },
+            {
+              "elapsed_seconds": 0.0003962920018238947,
+              "event": "complete",
+              "node": "answer_clarification"
+            },
+            {
+              "event": "start",
+              "node": "wait_for_next_message"
+            },
+            {
+              "elapsed_seconds": 0.00029837500187568367,
+              "event": "complete",
+              "node": "wait_for_next_message"
+            }
+          ],
+          "turn": 3,
+          "user_input": "Start a new request."
+        },
+        {
+          "after": {
+            "active_request_text": null,
+            "active_request_type": null,
+            "aggregation": null,
+            "chart_type": null,
+            "clarification_answers": [],
+            "clarification_count": 0,
+            "clarification_question": null,
+            "classification_safeguard": "pending_bare_date_clarification",
+            "filters": [],
+            "group_by": [],
+            "mapping_input_text": null,
+            "metric_column": null,
+            "missing_slots": [],
+            "model_classification": {
+              "active_request_action": "new_request",
+              "confidence": 0.99,
+              "correction_targets": [],
+              "message_type": "data_request",
+              "reason": "new_request",
+              "resolved_request_type": "data"
+            },
+            "output_type": "text",
+            "pending_ambiguous_correction_targets": [],
+            "pending_ambiguous_message": null,
+            "raw_metric": null,
+            "request_status": "idle",
+            "sql_is_safe": true,
+            "sql_query": "SELECT timestamp, value FROM sensor_measurements WHERE district = 'Ponte' AND (timestamp >= TIMESTAMP('2026-05-10 00:00:00+00') AND timestamp < TIMESTAMP('2026-05-11 00:00:00+00')) ORDER BY timestamp LIMIT 1000",
+            "time_range": null,
+            "unsupported_terms": []
+          },
+          "assistant_response": "The query executed successfully and returned 1 row(s).\n\n| execution_source | value |\n| --- | --- |\n| EVALUATION_STUB_NO_DATABASE_EXECUTION | 12.34 |\n\nExecuted SQL:\n```sql\nSELECT timestamp, value FROM sensor_measurements WHERE district = 'Ponte' AND (timestamp >= TIMESTAMP('2026-05-10 00:00:00+00') AND timestamp < TIMESTAMP('2026-05-11 00:00:00+00')) ORDER BY timestamp LIMIT 1000\n```",
+          "before": {
+            "active_request_text": "Show flow in Ponte.",
+            "active_request_type": "data",
+            "aggregation": null,
+            "chart_type": null,
+            "clarification_answers": [],
+            "clarification_count": 1,
+            "clarification_question": "I need a time range to query value for district=Ponte. For example: last 7 days, last 24 hours, last month, or a specific date range.",
+            "classification_safeguard": "exact_ambiguity_resolution",
+            "filters": [
+              {
+                "column": "district",
+                "operator": "=",
+                "value": "Ponte"
+              }
+            ],
+            "group_by": [],
+            "mapping_input_text": "Show flow in Ponte.",
+            "metric_column": "value",
+            "missing_slots": [
+              "time_range"
+            ],
+            "model_classification": null,
+            "output_type": "text",
+            "pending_ambiguous_correction_targets": [],
+            "pending_ambiguous_message": null,
+            "raw_metric": "flow",
+            "request_status": "collecting",
+            "sql_is_safe": false,
+            "sql_query": null,
+            "time_range": null,
+            "unsupported_terms": []
+          },
+          "classification": {
+            "active_request_action": "clarification_answer",
+            "classification_error": null,
+            "classification_reason": "new_request",
+            "classification_safeguard": "pending_bare_date_clarification",
+            "classification_valid": true,
+            "classified_request_type": "data",
+            "correction_targets": [],
+            "model_classification": {
+              "active_request_action": "new_request",
+              "confidence": 0.99,
+              "correction_targets": [],
+              "message_type": "data_request",
+              "reason": "new_request",
+              "resolved_request_type": "data"
+            },
+            "pending_ambiguous_correction_targets": [],
+            "pending_ambiguous_request_type": null,
+            "user_message_type": "clarification_or_update"
+          },
+          "elapsed_seconds": 18.738119833000383,
+          "error": null,
+          "execution_label": "EVALUATION_STUB_NO_DATABASE_EXECUTION",
+          "generated_sql": "SELECT timestamp, value FROM sensor_measurements WHERE district = 'Ponte' AND (timestamp >= TIMESTAMP('2026-05-10 00:00:00+00') AND timestamp < TIMESTAMP('2026-05-11 00:00:00+00')) ORDER BY timestamp LIMIT 1000",
+          "lifecycle": {
+            "active_request_action": "none",
+            "active_request_text": "Show flow in Ponte.",
+            "active_request_type": "data",
+            "chart_payload": null,
+            "clarification_answers": [
+              "2026-05-10"
+            ],
+            "classification_error": null,
+            "classification_valid": true,
+            "correction_targets": [],
+            "error": null,
+            "evidence_suggestions": {},
+            "execution_error": null,
+            "final_answer": null,
+            "is_complete": false,
+            "mapping_input_text": "Show flow in Ponte.\n2026-05-10",
+            "missing_slots": [
+              "time_range"
+            ],
+            "output_type": "text",
+            "parsed_time_range": null,
+            "pending_ambiguous_correction_targets": [],
+            "pending_ambiguous_message": null,
+            "pending_ambiguous_request_type": null,
+            "query_result": null,
+            "request_evidence": null,
+            "request_status": "collecting",
+            "request_transition_valid": true,
+            "sql_compilation_errors": [],
+            "sql_explanation": null,
+            "sql_generation_provenance": null,
+            "sql_is_safe": false,
+            "sql_query": null,
+            "sql_validation_errors": []
+          },
+          "mapping": {
+            "active_request_type": "data",
+            "aggregation": null,
+            "ambiguous_terms": [],
+            "chart_type": null,
+            "correction_targets": [],
+            "distinct": false,
+            "error": null,
+            "evidence_suggestions": {},
+            "filters": [
+              {
+                "column": "district",
+                "operator": "=",
+                "value": "Ponte"
+              }
+            ],
+            "group_by": [],
+            "having_conditions": [],
+            "limit": 1000,
+            "mapping_input_text": "Show flow in Ponte.\n2026-05-10",
+            "metric_column": "value",
+            "missing_slots": [],
+            "order_by": "timestamp ASC",
+            "output_type": "text",
+            "raw_metric": "flow",
+            "selected_columns": [
+              "timestamp",
+              "value"
+            ],
+            "table_name": "sensor_measurements",
+            "time_column": "timestamp",
+            "time_range": {
+              "end": "2026-05-11 00:00:00+00",
+              "kind": "absolute",
+              "relative": null,
+              "start": "2026-05-10 00:00:00+00"
+            },
+            "unsupported_terms": []
+          },
+          "observability": [
+            {
+              "input": {
+                "active_request_text": "Show flow in Ponte.",
+                "active_request_type": "data",
+                "clarification_question": "I need a time range to query value for district=Ponte. For example: last 7 days, last 24 hours, last month, or a specific date range.",
+                "collected_fields": {
+                  "aggregation": null,
+                  "chart_type": null,
+                  "filters": [
+                    {
+                      "column": "district",
+                      "operator": "=",
+                      "value": "Ponte"
+                    }
+                  ],
+                  "group_by": [],
+                  "limit": 1000,
+                  "metric_column": "value",
+                  "order_by": "timestamp ASC",
+                  "output_type": "text",
+                  "raw_metric": "flow",
+                  "time_range": null
+                },
+                "latest_user_message": "2026-05-10",
+                "missing_slots": [
+                  "time_range"
+                ],
+                "pending_ambiguous_message": null,
+                "recent_turns": [
+                  {
+                    "content": "Do you want to apply \"Show flow in Ponte.\" to the current request, or start a new request?",
+                    "role": "ai"
+                  },
+                  {
+                    "content": "Start a new request.",
+                    "role": "human"
+                  },
+                  {
+                    "content": "I need a time range to query value for district=Ponte. For example: last 7 days, last 24 hours, last month, or a specific date range.",
+                    "role": "ai"
+                  },
+                  {
+                    "content": "2026-05-10",
+                    "role": "human"
+                  }
+                ],
+                "request_status": "collecting"
+              },
+              "stage": "classifier_input"
+            },
+            {
+              "canonical": {
+                "active_request_action": "clarification_answer",
+                "confidence": 0.99,
+                "correction_targets": [],
+                "message_type": "clarification_or_update",
+                "reason": "new_request",
+                "resolved_request_type": "data"
+              },
+              "parsed": {
+                "active_request_action": "new_request",
+                "confidence": 0.99,
+                "correction_targets": [],
+                "message_type": "data_request",
+                "reason": "new_request",
+                "resolved_request_type": "data"
+              },
+              "parsing_error": null,
+              "raw": {
+                "additional_kwargs": {},
+                "content": "{\n  \"message_type\": \"data_request\",\n  \"reason\": \"new_request\",\n  \"confidence\": 0.99,\n  \"active_request_action\": \"new_request\",\n  \"correction_targets\": [],\n  \"resolved_request_type\": \"data\"\n}",
+                "id": "lc_run--01a130c3-73e1-7a73-b895-9619896f432e-0",
+                "invalid_tool_calls": [],
+                "name": null,
+                "response_metadata": {
+                  "created_at": "2026-10-12T15:38:00.998353Z",
+                  "done": true,
+                  "done_reason": "stop",
+                  "eval_count": 55,
+                  "eval_duration": 1584692000,
+                  "load_duration": 7007291,
+                  "logprobs": null,
+                  "model": "llama3.2:latest",
+                  "model_name": "llama3.2:latest",
+                  "model_provider": "ollama",
+                  "prompt_eval_count": 2157,
+                  "prompt_eval_duration": 959348000,
+                  "total_duration": 3011272208
+                },
+                "tool_calls": [],
+                "type": "ai",
+                "usage_metadata": {
+                  "input_tokens": 2157,
+                  "output_tokens": 55,
+                  "total_tokens": 2212
+                }
+              },
+              "safeguard": "pending_bare_date_clarification",
+              "stage": "classifier_output"
+            },
+            {
+              "route": "clarification_or_update",
+              "stage": "chosen_route"
+            },
+            {
+              "stage": "lifecycle_update",
+              "update": {
+                "active_request_action": "none",
+                "active_request_text": "Show flow in Ponte.",
+                "active_request_type": "data",
+                "chart_payload": null,
+                "clarification_answers": [
+                  "2026-05-10"
+                ],
+                "classification_error": null,
+                "classification_valid": true,
+                "correction_targets": [],
+                "error": null,
+                "evidence_suggestions": {},
+                "execution_error": null,
+                "final_answer": null,
+                "is_complete": false,
+                "mapping_input_text": "Show flow in Ponte.\n2026-05-10",
+                "missing_slots": [
+                  "time_range"
+                ],
+                "output_type": "text",
+                "parsed_time_range": null,
+                "pending_ambiguous_correction_targets": [],
+                "pending_ambiguous_message": null,
+                "pending_ambiguous_request_type": null,
+                "query_result": null,
+                "request_evidence": null,
+                "request_status": "collecting",
+                "request_transition_valid": true,
+                "sql_compilation_errors": [],
+                "sql_explanation": null,
+                "sql_generation_provenance": null,
+                "sql_is_safe": false,
+                "sql_query": null,
+                "sql_validation_errors": []
+              }
+            },
+            {
+              "input": {
+                "active_request_type": "data",
+                "classification_reason": "new_request",
+                "latest_user_message": "2026-05-10",
+                "mapping_input_text": "Show flow in Ponte.\n2026-05-10",
+                "missing_slots": [
+                  "time_range"
+                ],
+                "output_type": "text"
+              },
+              "stage": "evidence_input"
+            },
+            {
+              "bare_date_parser_result": {
+                "end": "2026-05-11 00:00:00+00",
+                "kind": "absolute",
+                "relative": null,
+                "start": "2026-05-10 00:00:00+00"
+              },
+              "canonical": {
+                "aggregation_conflict": null,
+                "aggregation_phrase": null,
+                "chart_phrase": null,
+                "location_phrases": [
+                  "Ponte"
+                ],
+                "metric_phrase": "flow",
+                "time_fallback_result": {
+                  "parsed": {
+                    "end": "2026-05-11 00:00:00+00",
+                    "kind": "absolute",
+                    "relative": null,
+                    "start": "2026-05-10 00:00:00+00"
+                  },
+                  "phrase": "2026-05-10",
+                  "status": "applied_bare_date"
+                },
+                "time_phrase": "2026-05-10",
+                "time_phrase_provenance": "bare_date_clarification_fallback"
+              },
+              "parsed": {
+                "aggregation_phrase": null,
+                "chart_phrase": null,
+                "location_phrases": [
+                  "Ponte"
+                ],
+                "metric_phrase": "flow",
+                "time_phrase": null
+              },
+              "parsing_error": null,
+              "raw": {
+                "additional_kwargs": {},
+                "content": "{\n  \"metric_phrase\": \"flow\",\n  \"location_phrases\": [\"Ponte\"],\n  \"time_phrase\": null,\n  \"aggregation_phrase\": null,\n  \"chart_phrase\": null\n}",
+                "id": "lc_run--01a130c3-7fbf-7c90-ae63-0e404f1c6102-0",
+                "invalid_tool_calls": [],
+                "name": null,
+                "response_metadata": {
+                  "created_at": "2026-10-12T15:38:02.608648Z",
+                  "done": true,
+                  "done_reason": "stop",
+                  "eval_count": 43,
+                  "eval_duration": 1122302000,
+                  "load_duration": 7392625,
+                  "logprobs": null,
+                  "model": "llama3.2:latest",
+                  "model_name": "llama3.2:latest",
+                  "model_provider": "ollama",
+                  "prompt_eval_count": 1157,
+                  "prompt_eval_duration": 295792000,
+                  "total_duration": 1583282042
+                },
+                "tool_calls": [],
+                "type": "ai",
+                "usage_metadata": {
+                  "input_tokens": 1157,
+                  "output_tokens": 43,
+                  "total_tokens": 1200
+                }
+              },
+              "stage": "evidence_output",
+              "time_fallback_result": {
+                "parsed": {
+                  "end": "2026-05-11 00:00:00+00",
+                  "kind": "absolute",
+                  "relative": null,
+                  "start": "2026-05-10 00:00:00+00"
+                },
+                "phrase": "2026-05-10",
+                "status": "applied_bare_date"
+              },
+              "time_phrase_provenance": "bare_date_clarification_fallback"
+            },
+            {
+              "input": "2026-05-10",
+              "result": {
+                "end": "2026-05-11 00:00:00+00",
+                "kind": "absolute",
+                "relative": null,
+                "start": "2026-05-10 00:00:00+00"
+              },
+              "stage": "time_parser"
+            },
+            {
+              "input": {
+                "aggregation": null,
+                "available_columns": [
+                  "sensor_id",
+                  "timestamp",
+                  "type",
+                  "value",
+                  "city",
+                  "district"
+                ],
+                "distinct": false,
+                "filters": [
+                  {
+                    "column": "district",
+                    "operator": "=",
+                    "value": "Ponte"
+                  }
+                ],
+                "group_by": [],
+                "having_conditions": [],
+                "limit": 1000,
+                "metric_column": "value",
+                "order_by": "timestamp ASC",
+                "requirements_context": {
+                  "aggregations": {
+                    "supported": [
+                      "avg",
+                      "sum",
+                      "min",
+                      "max",
+                      "count"
+                    ]
+                  },
+                  "defaults": {
+                    "default_limit": 1000,
+                    "default_order_by": "timestamp ASC",
+                    "metric_column": "value",
+                    "table": "sensor_measurements",
+                    "time_column": "timestamp"
+                  },
+                  "entity_resolution": {
+                    "ambiguity": {
+                      "require_user_confirmation_for_fuzzy_match": true,
+                      "treat_fuzzy_matches_as_ambiguous": true
+                    },
+                    "fuzzy_match": {
+                      "auto_apply": false,
+                      "enabled": true,
+                      "max_suggestions": 3,
+                      "min_similarity": 0.88
+                    },
+                    "locations": {
+                      "add_parent_city_filter_for_district": false,
+                      "allow_city_only_filter": true,
+                      "allow_district_only_filter": true,
+                      "city_column": "city",
+                      "district_column": "district",
+                      "reject_city_district_mismatch": true
+                    },
+                    "unsupported_terms": {
+                      "include_unsupported_locations": true,
+                      "include_unsupported_measurement_types": true,
+                      "include_unsupported_metrics": true
+                    }
+                  },
+                  "filters": {
+                    "supported_operators": [
+                      "=",
+                      "!=",
+                      ">",
+                      ">=",
+                      "<",
+                      "<=",
+                      "IN",
+                      "BETWEEN"
+                    ]
+                  },
+                  "requirements": {
+                    "chart": {
+                      "default_x_axis": "timestamp",
+                      "default_y_axis": "value",
+                      "required_entity_groups": {
+                        "location": {
+                          "any_of": [
+                            "city",
+                            "district"
+                          ]
+                        }
+                      },
+                      "required_slots": [
+                        "metric_column",
+                        "time_range",
+                        "chart_type"
+                      ],
+                      "supported_chart_types": [
+                        "line",
+                        "bar",
+                        "table"
+                      ]
+                    },
+                    "retrieve_data": {
+                      "optional_slots": [
+                        "sensor_id",
+                        "type",
+                        "aggregation",
+                        "group_by",
+                        "limit"
+                      ],
+                      "required_entity_groups": {
+                        "location": {
+                          "any_of": [
+                            "city",
+                            "district"
+                          ]
+                        }
+                      },
+                      "required_slots": [
+                        "metric_column",
+                        "time_range"
+                      ]
+                    },
+                    "text": {
+                      "required_entity_groups": {
+                        "location": {
+                          "any_of": [
+                            "city",
+                            "district"
+                          ]
+                        }
+                      },
+                      "required_slots": [
+                        "metric_column",
+                        "time_range"
+                      ]
+                    }
+                  },
+                  "safety": {
+                    "allow_only_select": true,
+                    "max_limit": 5000,
+                    "require_limit": true
+                  }
+                },
+                "selected_columns": [
+                  "timestamp",
+                  "value"
+                ],
+                "table_name": "sensor_measurements",
+                "time_column": "timestamp",
+                "time_range": {
+                  "end": "2026-05-11 00:00:00+00",
+                  "kind": "absolute",
+                  "relative": null,
+                  "start": "2026-05-10 00:00:00+00"
+                }
+              },
+              "stage": "sql_generation_input"
+            },
+            {
+              "formatted_messages": "not applicable: deterministic compiler",
+              "provenance": "deterministic_compiler",
+              "raw_provider_response": "not applicable: no SQL-model call",
+              "sql_model_call": false,
+              "stage": "sql_generation_boundary"
+            },
+            {
+              "compilation_errors": [],
+              "compilation_plan": {
+                "aggregate_alias": null,
+                "aggregation": null,
+                "distinct": false,
+                "filter_count": 1,
+                "group_by": [],
+                "has_time_predicate": true,
+                "having_count": 0,
+                "limit": 1000,
+                "metric_column": "value",
+                "order_by": "timestamp ASC",
+                "selected_columns": [
+                  "timestamp",
+                  "value"
+                ],
+                "table_name": "sensor_measurements",
+                "time_column": "timestamp"
+              },
+              "final_sql_query": "SELECT timestamp, value FROM sensor_measurements WHERE district = 'Ponte' AND (timestamp >= TIMESTAMP('2026-05-10 00:00:00+00') AND timestamp < TIMESTAMP('2026-05-11 00:00:00+00')) ORDER BY timestamp LIMIT 1000",
+              "parsed": null,
+              "provenance": "deterministic_compiler",
+              "raw_provider_response": "not applicable: no SQL-model call",
+              "stage": "sql_generation_output"
+            }
+          ],
+          "stage_timings": [
+            {
+              "event": "start",
+              "node": "load_schema_context"
+            },
+            {
+              "elapsed_seconds": 0.01659999999901629,
+              "event": "complete",
+              "node": "load_schema_context"
+            },
+            {
+              "event": "start",
+              "node": "receive_user_message"
+            },
+            {
+              "elapsed_seconds": 0.00016899999900488183,
+              "event": "complete",
+              "node": "receive_user_message"
+            },
+            {
+              "event": "start",
+              "node": "classify_user_message"
+            },
+            {
+              "elapsed_seconds": 3.02898179100157,
+              "event": "complete",
+              "node": "classify_user_message"
+            },
+            {
+              "event": "start",
+              "node": "early_sql_safety_check"
+            },
+            {
+              "elapsed_seconds": 0.0012291250022826716,
+              "event": "complete",
+              "node": "early_sql_safety_check"
+            },
+            {
+              "event": "start",
+              "node": "start_or_update_active_request"
+            },
+            {
+              "elapsed_seconds": 0.00163737500042771,
+              "event": "complete",
+              "node": "start_or_update_active_request"
+            },
+            {
+              "event": "start",
+              "node": "interpret_user_request"
+            },
+            {
+              "elapsed_seconds": 0.0019521249996614642,
+              "event": "complete",
+              "node": "interpret_user_request"
+            },
+            {
+              "event": "start",
+              "node": "extract_request_evidence"
+            },
+            {
+              "elapsed_seconds": 1.5964826669987815,
+              "event": "complete",
+              "node": "extract_request_evidence"
+            },
+            {
+              "event": "start",
+              "node": "parse_time_phrase"
+            },
+            {
+              "elapsed_seconds": 0.0006925419984327164,
+              "event": "complete",
+              "node": "parse_time_phrase"
+            },
+            {
+              "event": "start",
+              "node": "pre_validate_request_evidence"
+            },
+            {
+              "elapsed_seconds": 0.0012004160016658716,
+              "event": "complete",
+              "node": "pre_validate_request_evidence"
+            },
+            {
+              "event": "start",
+              "node": "map_to_schema"
+            },
+            {
+              "elapsed_seconds": 14.020581959000992,
+              "event": "complete",
+              "node": "map_to_schema"
+            },
+            {
+              "event": "start",
+              "node": "validate_mapped_state"
+            },
+            {
+              "elapsed_seconds": 0.0006141250014479738,
+              "event": "complete",
+              "node": "validate_mapped_state"
+            },
+            {
+              "event": "start",
+              "node": "merge_extracted_info"
+            },
+            {
+              "elapsed_seconds": 0.0003669580000860151,
+              "event": "complete",
+              "node": "merge_extracted_info"
+            },
+            {
+              "event": "start",
+              "node": "check_completeness"
+            },
+            {
+              "elapsed_seconds": 0.0006884169997647405,
+              "event": "complete",
+              "node": "check_completeness"
+            },
+            {
+              "event": "start",
+              "node": "generate_sql"
+            },
+            {
+              "elapsed_seconds": 0.04097558399735135,
+              "event": "complete",
+              "node": "generate_sql"
+            },
+            {
+              "event": "start",
+              "node": "validate_sql_safety"
+            },
+            {
+              "elapsed_seconds": 0.0021577910010819323,
+              "event": "complete",
+              "node": "validate_sql_safety"
+            },
+            {
+              "event": "start",
+              "node": "execute_sql"
+            },
+            {
+              "elapsed_seconds": 0.00038100000165286474,
+              "event": "complete",
+              "node": "execute_sql"
+            },
+            {
+              "event": "start",
+              "node": "build_text_response"
+            },
+            {
+              "elapsed_seconds": 0.00022391599850379862,
+              "event": "complete",
+              "node": "build_text_response"
+            },
+            {
+              "event": "start",
+              "node": "mark_request_done"
+            },
+            {
+              "elapsed_seconds": 0.0003838339980575256,
+              "event": "complete",
+              "node": "mark_request_done"
+            },
+            {
+              "event": "start",
+              "node": "wait_for_next_message"
+            },
+            {
+              "elapsed_seconds": 0.0008498750030412339,
+              "event": "complete",
+              "node": "wait_for_next_message"
+            }
+          ],
+          "turn": 4,
+          "user_input": "2026-05-10"
+        }
+      ]
+    },
+    {
+      "assessment": {
+        "canonical_action": "new_request",
+        "completion": {
+          "exclusive_end": true,
+          "inclusive_start": true,
+          "labelled_stub_reached": true,
+          "old_average_not_inherited": true,
+          "requested_location": true,
+          "requested_metric": true,
+          "sql_generated": true,
+          "sql_safety_passed": true
+        },
+        "fresh_initialization": {
+          "clarification_answers_reset": true,
+          "clarification_count_reset": true,
+          "conversation_history_preserved": true,
+          "fresh_data_request": true,
+          "marconi_not_mapped": true,
+          "old_aggregation_cleared": true,
+          "old_chart_cleared": true,
+          "old_location_cleared": true,
+          "old_result_cleared": true,
+          "old_sql_cleared": true,
+          "pending_ambiguity_cleared": true,
+          "ponte_mapped": true,
+          "saved_or_explicit_request_used": true
+        },
+        "passed": true,
+        "raw_model_accuracy": true,
+        "raw_model_action": "new_request",
+        "relationship_clarification_requested": false,
+        "relationship_clarification_turns": 0,
+        "safeguard": null,
+        "setup_passed": true
+      },
+      "branch": "fixed_two_turn",
+      "name": "scenario_b",
+      "turns": [
+        {
+          "after": {
+            "active_request_text": "Show a line chart of average flow in Marconi.",
+            "active_request_type": "chart",
+            "aggregation": "avg",
+            "chart_type": "line",
+            "clarification_answers": [],
+            "clarification_count": 1,
+            "clarification_question": "I need a time range to query value for district=Marconi. For example: last 7 days, last 24 hours, last month, or a specific date range.",
+            "classification_safeguard": "idle_request_initialization",
+            "filters": [
+              {
+                "column": "district",
+                "operator": "=",
+                "value": "Marconi"
+              }
+            ],
+            "group_by": [],
+            "mapping_input_text": "Show a line chart of average flow in Marconi.",
+            "metric_column": "value",
+            "missing_slots": [
+              "time_range"
+            ],
+            "model_classification": {
+              "active_request_action": "none",
+              "confidence": 1.0,
+              "correction_targets": [],
+              "message_type": "chart_request",
+              "reason": "new_request",
+              "resolved_request_type": "chart"
+            },
+            "output_type": "chart",
+            "pending_ambiguous_correction_targets": [],
+            "pending_ambiguous_message": null,
+            "raw_metric": "flow",
+            "request_status": "collecting",
+            "sql_is_safe": false,
+            "sql_query": null,
+            "time_range": null,
+            "unsupported_terms": []
+          },
+          "assistant_response": "I need a time range to query value for district=Marconi. For example: last 7 days, last 24 hours, last month, or a specific date range.",
+          "before": {},
+          "classification": {
+            "active_request_action": "new_request",
+            "classification_error": null,
+            "classification_reason": "new_request",
+            "classification_safeguard": "idle_request_initialization",
+            "classification_valid": true,
+            "classified_request_type": "chart",
+            "correction_targets": [],
+            "model_classification": {
+              "active_request_action": "none",
+              "confidence": 1.0,
+              "correction_targets": [],
+              "message_type": "chart_request",
+              "reason": "new_request",
+              "resolved_request_type": "chart"
+            },
+            "pending_ambiguous_correction_targets": [],
+            "pending_ambiguous_request_type": null,
+            "user_message_type": "chart_request"
+          },
+          "elapsed_seconds": 17.990748000000167,
+          "error": null,
+          "execution_label": null,
+          "generated_sql": null,
+          "lifecycle": {
+            "active_request_action": "none",
+            "active_request_text": "Show a line chart of average flow in Marconi.",
+            "active_request_type": "chart",
+            "aggregation": null,
+            "ambiguous_terms": [],
+            "chart_payload": null,
+            "chart_type": null,
+            "clarification_answers": [],
+            "clarification_count": 0,
+            "clarification_question": null,
+            "classification_error": null,
+            "classification_valid": true,
+            "classified_request_type": null,
+            "correction_targets": [],
+            "distinct": false,
+            "error": null,
+            "evidence_suggestions": {},
+            "execution_error": null,
+            "filters": [],
+            "final_answer": null,
+            "group_by": [],
+            "having_conditions": [],
+            "intent": null,
+            "is_complete": false,
+            "limit": null,
+            "mapping_input_text": "Show a line chart of average flow in Marconi.",
+            "metric_column": null,
+            "missing_slots": [],
+            "order_by": null,
+            "output_type": "chart",
+            "parsed_time_range": null,
+            "pending_ambiguous_correction_targets": [],
+            "pending_ambiguous_message": null,
+            "pending_ambiguous_request_type": null,
+            "query_result": null,
+            "raw_metric": null,
+            "request_evidence": null,
+            "request_status": "collecting",
+            "request_transition_valid": true,
+            "required_slots": [],
+            "selected_columns": [],
+            "sql_compilation_errors": [],
+            "sql_explanation": null,
+            "sql_generation_provenance": null,
+            "sql_is_safe": false,
+            "sql_query": null,
+            "sql_validation_errors": [],
+            "table_name": null,
+            "time_column": null,
+            "time_range": null,
+            "unsupported_terms": []
+          },
+          "mapping": {
+            "active_request_type": "chart",
+            "aggregation": "avg",
+            "ambiguous_terms": [],
+            "chart_type": "line",
+            "correction_targets": [],
+            "distinct": false,
+            "error": null,
+            "evidence_suggestions": {},
+            "filters": [
+              {
+                "column": "district",
+                "operator": "=",
+                "value": "Marconi"
+              }
+            ],
+            "group_by": [],
+            "having_conditions": [],
+            "limit": 1000,
+            "mapping_input_text": "Show a line chart of average flow in Marconi.",
+            "metric_column": "value",
+            "missing_slots": [],
+            "order_by": null,
+            "output_type": "chart",
+            "raw_metric": "flow",
+            "selected_columns": [],
+            "table_name": "sensor_measurements",
+            "time_column": "timestamp",
+            "time_range": null,
+            "unsupported_terms": []
+          },
+          "observability": [
+            {
+              "input": {
+                "active_request_text": null,
+                "active_request_type": null,
+                "clarification_question": null,
+                "collected_fields": {
+                  "aggregation": null,
+                  "chart_type": null,
+                  "filters": [],
+                  "group_by": [],
+                  "limit": null,
+                  "metric_column": null,
+                  "order_by": null,
+                  "output_type": null,
+                  "raw_metric": null,
+                  "time_range": null
+                },
+                "latest_user_message": "Show a line chart of average flow in Marconi.",
+                "missing_slots": [],
+                "pending_ambiguous_message": null,
+                "recent_turns": [
+                  {
+                    "content": "Show a line chart of average flow in Marconi.",
+                    "role": "human"
+                  }
+                ],
+                "request_status": "idle"
+              },
+              "stage": "classifier_input"
+            },
+            {
+              "canonical": {
+                "active_request_action": "new_request",
+                "confidence": 1.0,
+                "correction_targets": [],
+                "message_type": "chart_request",
+                "reason": "new_request",
+                "resolved_request_type": "chart"
+              },
+              "parsed": {
+                "active_request_action": "none",
+                "confidence": 1.0,
+                "correction_targets": [],
+                "message_type": "chart_request",
+                "reason": "new_request",
+                "resolved_request_type": "chart"
+              },
+              "parsing_error": null,
+              "raw": {
+                "additional_kwargs": {},
+                "content": "{\n  \"message_type\": \"chart_request\",\n  \"reason\": \"new_request\",\n  \"confidence\": 1.0,\n  \"active_request_action\": \"none\",\n  \"correction_targets\": [],\n  \"resolved_request_type\": \"chart\"\n}",
+                "id": "lc_run--01a130c3-bd27-7673-8ea2-3982e3744e0e-0",
+                "invalid_tool_calls": [],
+                "name": null,
+                "response_metadata": {
+                  "created_at": "2026-10-12T15:38:19.105904Z",
+                  "done": true,
+                  "done_reason": "stop",
+                  "eval_count": 54,
+                  "eval_duration": 1494089000,
+                  "load_duration": 5791292,
+                  "logprobs": null,
+                  "model": "llama3.2:latest",
+                  "model_name": "llama3.2:latest",
+                  "model_provider": "ollama",
+                  "prompt_eval_count": 2005,
+                  "prompt_eval_duration": 488309000,
+                  "total_duration": 2360893209
+                },
+                "tool_calls": [],
+                "type": "ai",
+                "usage_metadata": {
+                  "input_tokens": 2005,
+                  "output_tokens": 54,
+                  "total_tokens": 2059
+                }
+              },
+              "safeguard": "idle_request_initialization",
+              "stage": "classifier_output"
+            },
+            {
+              "route": "data_or_chart_request",
+              "stage": "chosen_route"
+            },
+            {
+              "stage": "lifecycle_update",
+              "update": {
+                "active_request_action": "none",
+                "active_request_text": "Show a line chart of average flow in Marconi.",
+                "active_request_type": "chart",
+                "aggregation": null,
+                "ambiguous_terms": [],
+                "chart_payload": null,
+                "chart_type": null,
+                "clarification_answers": [],
+                "clarification_count": 0,
+                "clarification_question": null,
+                "classification_error": null,
+                "classification_valid": true,
+                "classified_request_type": null,
+                "correction_targets": [],
+                "distinct": false,
+                "error": null,
+                "evidence_suggestions": {},
+                "execution_error": null,
+                "filters": [],
+                "final_answer": null,
+                "group_by": [],
+                "having_conditions": [],
+                "intent": null,
+                "is_complete": false,
+                "limit": null,
+                "mapping_input_text": "Show a line chart of average flow in Marconi.",
+                "metric_column": null,
+                "missing_slots": [],
+                "order_by": null,
+                "output_type": "chart",
+                "parsed_time_range": null,
+                "pending_ambiguous_correction_targets": [],
+                "pending_ambiguous_message": null,
+                "pending_ambiguous_request_type": null,
+                "query_result": null,
+                "raw_metric": null,
+                "request_evidence": null,
+                "request_status": "collecting",
+                "request_transition_valid": true,
+                "required_slots": [],
+                "selected_columns": [],
+                "sql_compilation_errors": [],
+                "sql_explanation": null,
+                "sql_generation_provenance": null,
+                "sql_is_safe": false,
+                "sql_query": null,
+                "sql_validation_errors": [],
+                "table_name": null,
+                "time_column": null,
+                "time_range": null,
+                "unsupported_terms": []
+              }
+            },
+            {
+              "input": {
+                "active_request_type": "chart",
+                "classification_reason": "new_request",
+                "latest_user_message": "Show a line chart of average flow in Marconi.",
+                "mapping_input_text": "Show a line chart of average flow in Marconi.",
+                "missing_slots": [],
+                "output_type": "chart"
+              },
+              "stage": "evidence_input"
+            },
+            {
+              "bare_date_parser_result": null,
+              "canonical": {
+                "aggregation_conflict": null,
+                "aggregation_phrase": "avg",
+                "chart_phrase": "line chart",
+                "location_phrases": [
+                  "Marconi"
+                ],
+                "metric_phrase": "flow",
+                "time_fallback_result": {
+                  "parsed": null,
+                  "phrase": null,
+                  "status": "not_found"
+                },
+                "time_phrase": null,
+                "time_phrase_provenance": null
+              },
+              "parsed": {
+                "aggregation_phrase": "average",
+                "chart_phrase": "line chart",
+                "location_phrases": [
+                  "Marconi"
+                ],
+                "metric_phrase": "average flow",
+                "time_phrase": null
+              },
+              "parsing_error": null,
+              "raw": {
+                "additional_kwargs": {},
+                "content": "{\n  \"metric_phrase\": \"average flow\",\n  \"location_phrases\": [\"Marconi\"],\n  \"time_phrase\": null,\n  \"aggregation_phrase\": \"average\",\n  \"chart_phrase\": \"line chart\"\n}",
+                "id": "lc_run--01a130c3-c6c0-7671-9636-d2bded284f5b-0",
+                "invalid_tool_calls": [],
+                "name": null,
+                "response_metadata": {
+                  "created_at": "2026-10-12T15:38:20.885766Z",
+                  "done": true,
+                  "done_reason": "stop",
+                  "eval_count": 47,
+                  "eval_duration": 1198314000,
+                  "load_duration": 8343000,
+                  "logprobs": null,
+                  "model": "llama3.2:latest",
+                  "model_name": "llama3.2:latest",
+                  "model_provider": "ollama",
+                  "prompt_eval_count": 1156,
+                  "prompt_eval_duration": 296993000,
+                  "total_duration": 1684271459
+                },
+                "tool_calls": [],
+                "type": "ai",
+                "usage_metadata": {
+                  "input_tokens": 1156,
+                  "output_tokens": 47,
+                  "total_tokens": 1203
+                }
+              },
+              "stage": "evidence_output",
+              "time_fallback_result": {
+                "parsed": null,
+                "phrase": null,
+                "status": "not_found"
+              },
+              "time_phrase_provenance": null
+            },
+            {
+              "input": null,
+              "result": null,
+              "stage": "time_parser"
+            }
+          ],
+          "setup_checks": [
+            {
+              "description": "request is collecting",
+              "passed": true
+            },
+            {
+              "description": "active request exists",
+              "passed": true
+            },
+            {
+              "description": "old request is a chart",
+              "passed": true
+            },
+            {
+              "description": "old chart type is line",
+              "passed": true
+            },
+            {
+              "description": "old aggregation is average",
+              "passed": true
+            },
+            {
+              "description": "old location is Marconi",
+              "passed": true
+            }
+          ],
+          "stage_timings": [
+            {
+              "event": "start",
+              "node": "load_schema_context"
+            },
+            {
+              "elapsed_seconds": 0.008194125002773944,
+              "event": "complete",
+              "node": "load_schema_context"
+            },
+            {
+              "event": "start",
+              "node": "receive_user_message"
+            },
+            {
+              "elapsed_seconds": 0.00010316599946236238,
+              "event": "complete",
+              "node": "receive_user_message"
+            },
+            {
+              "event": "start",
+              "node": "classify_user_message"
+            },
+            {
+              "elapsed_seconds": 2.379922208998323,
+              "event": "complete",
+              "node": "classify_user_message"
+            },
+            {
+              "event": "start",
+              "node": "early_sql_safety_check"
+            },
+            {
+              "elapsed_seconds": 0.0010130830014531966,
+              "event": "complete",
+              "node": "early_sql_safety_check"
+            },
+            {
+              "event": "start",
+              "node": "start_or_update_active_request"
+            },
+            {
+              "elapsed_seconds": 0.0008657090002088808,
+              "event": "complete",
+              "node": "start_or_update_active_request"
+            },
+            {
+              "event": "start",
+              "node": "interpret_user_request"
+            },
+            {
+              "elapsed_seconds": 0.0008932090022426564,
+              "event": "complete",
+              "node": "interpret_user_request"
+            },
+            {
+              "event": "start",
+              "node": "extract_request_evidence"
+            },
+            {
+              "elapsed_seconds": 1.7648188330022094,
+              "event": "complete",
+              "node": "extract_request_evidence"
+            },
+            {
+              "event": "start",
+              "node": "parse_time_phrase"
+            },
+            {
+              "elapsed_seconds": 0.0005615830013994128,
+              "event": "complete",
+              "node": "parse_time_phrase"
+            },
+            {
+              "event": "start",
+              "node": "pre_validate_request_evidence"
+            },
+            {
+              "elapsed_seconds": 0.001068125002348097,
+              "event": "complete",
+              "node": "pre_validate_request_evidence"
+            },
+            {
+              "event": "start",
+              "node": "map_to_schema"
+            },
+            {
+              "elapsed_seconds": 13.808821124999668,
+              "event": "complete",
+              "node": "map_to_schema"
+            },
+            {
+              "event": "start",
+              "node": "validate_mapped_state"
+            },
+            {
+              "elapsed_seconds": 0.0009610000015527476,
+              "event": "complete",
+              "node": "validate_mapped_state"
+            },
+            {
+              "event": "start",
+              "node": "merge_extracted_info"
+            },
+            {
+              "elapsed_seconds": 0.0003509579983074218,
+              "event": "complete",
+              "node": "merge_extracted_info"
+            },
+            {
+              "event": "start",
+              "node": "check_completeness"
+            },
+            {
+              "elapsed_seconds": 0.0006784159995731898,
+              "event": "complete",
+              "node": "check_completeness"
+            },
+            {
+              "event": "start",
+              "node": "check_clarification_limit"
+            },
+            {
+              "elapsed_seconds": 0.0005574579990934581,
+              "event": "complete",
+              "node": "check_clarification_limit"
+            },
+            {
+              "event": "start",
+              "node": "answer_clarification"
+            },
+            {
+              "elapsed_seconds": 0.0003941670001950115,
+              "event": "complete",
+              "node": "answer_clarification"
+            },
+            {
+              "event": "start",
+              "node": "wait_for_next_message"
+            },
+            {
+              "elapsed_seconds": 0.00035812500209431164,
+              "event": "complete",
+              "node": "wait_for_next_message"
+            }
+          ],
+          "turn": 1,
+          "user_input": "Show a line chart of average flow in Marconi."
+        },
+        {
+          "after": {
+            "active_request_text": null,
+            "active_request_type": null,
+            "aggregation": null,
+            "chart_type": null,
+            "clarification_answers": [],
+            "clarification_count": 0,
+            "clarification_question": null,
+            "classification_safeguard": null,
+            "filters": [],
+            "group_by": [],
+            "mapping_input_text": null,
+            "metric_column": null,
+            "missing_slots": [],
+            "model_classification": {
+              "active_request_action": "new_request",
+              "confidence": 0.99,
+              "correction_targets": [],
+              "message_type": "data_request",
+              "reason": "new_request",
+              "resolved_request_type": "data"
+            },
+            "output_type": "text",
+            "pending_ambiguous_correction_targets": [],
+            "pending_ambiguous_message": null,
+            "raw_metric": null,
+            "request_status": "idle",
+            "sql_is_safe": true,
+            "sql_query": "SELECT timestamp, value FROM sensor_measurements WHERE district = 'Ponte' AND (timestamp >= TIMESTAMP('2026-05-10 00:00:00+00') AND timestamp < TIMESTAMP('2026-05-11 00:00:00+00')) ORDER BY timestamp LIMIT 1000",
+            "time_range": null,
+            "unsupported_terms": []
+          },
+          "assistant_response": "The query executed successfully and returned 1 row(s).\n\n| execution_source | value |\n| --- | --- |\n| EVALUATION_STUB_NO_DATABASE_EXECUTION | 12.34 |\n\nExecuted SQL:\n```sql\nSELECT timestamp, value FROM sensor_measurements WHERE district = 'Ponte' AND (timestamp >= TIMESTAMP('2026-05-10 00:00:00+00') AND timestamp < TIMESTAMP('2026-05-11 00:00:00+00')) ORDER BY timestamp LIMIT 1000\n```",
+          "before": {
+            "active_request_text": "Show a line chart of average flow in Marconi.",
+            "active_request_type": "chart",
+            "aggregation": "avg",
+            "chart_type": "line",
+            "clarification_answers": [],
+            "clarification_count": 1,
+            "clarification_question": "I need a time range to query value for district=Marconi. For example: last 7 days, last 24 hours, last month, or a specific date range.",
+            "classification_safeguard": "idle_request_initialization",
+            "filters": [
+              {
+                "column": "district",
+                "operator": "=",
+                "value": "Marconi"
+              }
+            ],
+            "group_by": [],
+            "mapping_input_text": "Show a line chart of average flow in Marconi.",
+            "metric_column": "value",
+            "missing_slots": [
+              "time_range"
+            ],
+            "model_classification": {
+              "active_request_action": "none",
+              "confidence": 1.0,
+              "correction_targets": [],
+              "message_type": "chart_request",
+              "reason": "new_request",
+              "resolved_request_type": "chart"
+            },
+            "output_type": "chart",
+            "pending_ambiguous_correction_targets": [],
+            "pending_ambiguous_message": null,
+            "raw_metric": "flow",
+            "request_status": "collecting",
+            "sql_is_safe": false,
+            "sql_query": null,
+            "time_range": null,
+            "unsupported_terms": []
+          },
+          "classification": {
+            "active_request_action": "new_request",
+            "classification_error": null,
+            "classification_reason": "new_request",
+            "classification_safeguard": null,
+            "classification_valid": true,
+            "classified_request_type": "data",
+            "correction_targets": [],
+            "model_classification": {
+              "active_request_action": "new_request",
+              "confidence": 0.99,
+              "correction_targets": [],
+              "message_type": "data_request",
+              "reason": "new_request",
+              "resolved_request_type": "data"
+            },
+            "pending_ambiguous_correction_targets": [],
+            "pending_ambiguous_request_type": null,
+            "user_message_type": "data_request"
+          },
+          "elapsed_seconds": 19.956261583000014,
+          "error": null,
+          "execution_label": "EVALUATION_STUB_NO_DATABASE_EXECUTION",
+          "generated_sql": "SELECT timestamp, value FROM sensor_measurements WHERE district = 'Ponte' AND (timestamp >= TIMESTAMP('2026-05-10 00:00:00+00') AND timestamp < TIMESTAMP('2026-05-11 00:00:00+00')) ORDER BY timestamp LIMIT 1000",
+          "lifecycle": {
+            "active_request_action": "none",
+            "active_request_text": "Start a new request: show flow in Ponte on 2026-05-10.",
+            "active_request_type": "data",
+            "aggregation": null,
+            "ambiguous_terms": [],
+            "chart_payload": null,
+            "chart_type": null,
+            "clarification_answers": [],
+            "clarification_count": 0,
+            "clarification_question": null,
+            "classification_error": null,
+            "classification_valid": true,
+            "classified_request_type": null,
+            "correction_targets": [],
+            "distinct": false,
+            "error": null,
+            "evidence_suggestions": {},
+            "execution_error": null,
+            "filters": [],
+            "final_answer": null,
+            "group_by": [],
+            "having_conditions": [],
+            "intent": null,
+            "is_complete": false,
+            "limit": null,
+            "mapping_input_text": "Start a new request: show flow in Ponte on 2026-05-10.",
+            "metric_column": null,
+            "missing_slots": [],
+            "order_by": null,
+            "output_type": "text",
+            "parsed_time_range": null,
+            "pending_ambiguous_correction_targets": [],
+            "pending_ambiguous_message": null,
+            "pending_ambiguous_request_type": null,
+            "query_result": null,
+            "raw_metric": null,
+            "request_evidence": null,
+            "request_status": "collecting",
+            "request_transition_valid": true,
+            "required_slots": [],
+            "selected_columns": [],
+            "sql_compilation_errors": [],
+            "sql_explanation": null,
+            "sql_generation_provenance": null,
+            "sql_is_safe": false,
+            "sql_query": null,
+            "sql_validation_errors": [],
+            "table_name": null,
+            "time_column": null,
+            "time_range": null,
+            "unsupported_terms": []
+          },
+          "mapping": {
+            "active_request_type": "data",
+            "aggregation": null,
+            "ambiguous_terms": [],
+            "chart_type": null,
+            "correction_targets": [],
+            "distinct": false,
+            "error": null,
+            "evidence_suggestions": {},
+            "filters": [
+              {
+                "column": "district",
+                "operator": "=",
+                "value": "Ponte"
+              }
+            ],
+            "group_by": [],
+            "having_conditions": [],
+            "limit": 1000,
+            "mapping_input_text": "Start a new request: show flow in Ponte on 2026-05-10.",
+            "metric_column": "value",
+            "missing_slots": [],
+            "order_by": "timestamp ASC",
+            "output_type": "text",
+            "raw_metric": "flow",
+            "selected_columns": [
+              "timestamp",
+              "value"
+            ],
+            "table_name": "sensor_measurements",
+            "time_column": "timestamp",
+            "time_range": {
+              "end": "2026-05-11 00:00:00+00",
+              "kind": "absolute",
+              "relative": null,
+              "start": "2026-05-10 00:00:00+00"
+            },
+            "unsupported_terms": []
+          },
+          "observability": [
+            {
+              "input": {
+                "active_request_text": "Show a line chart of average flow in Marconi.",
+                "active_request_type": "chart",
+                "clarification_question": "I need a time range to query value for district=Marconi. For example: last 7 days, last 24 hours, last month, or a specific date range.",
+                "collected_fields": {
+                  "aggregation": "avg",
+                  "chart_type": "line",
+                  "filters": [
+                    {
+                      "column": "district",
+                      "operator": "=",
+                      "value": "Marconi"
+                    }
+                  ],
+                  "group_by": [],
+                  "limit": 1000,
+                  "metric_column": "value",
+                  "order_by": null,
+                  "output_type": "chart",
+                  "raw_metric": "flow",
+                  "time_range": null
+                },
+                "latest_user_message": "Start a new request: show flow in Ponte on 2026-05-10.",
+                "missing_slots": [
+                  "time_range"
+                ],
+                "pending_ambiguous_message": null,
+                "recent_turns": [
+                  {
+                    "content": "Show a line chart of average flow in Marconi.",
+                    "role": "human"
+                  },
+                  {
+                    "content": "I need a time range to query value for district=Marconi. For example: last 7 days, last 24 hours, last month, or a specific date range.",
+                    "role": "ai"
+                  },
+                  {
+                    "content": "Start a new request: show flow in Ponte on 2026-05-10.",
+                    "role": "human"
+                  }
+                ],
+                "request_status": "collecting"
+              },
+              "stage": "classifier_input"
+            },
+            {
+              "canonical": {
+                "active_request_action": "new_request",
+                "confidence": 0.99,
+                "correction_targets": [],
+                "message_type": "data_request",
+                "reason": "new_request",
+                "resolved_request_type": "data"
+              },
+              "parsed": {
+                "active_request_action": "new_request",
+                "confidence": 0.99,
+                "correction_targets": [],
+                "message_type": "data_request",
+                "reason": "new_request",
+                "resolved_request_type": "data"
+              },
+              "parsing_error": null,
+              "raw": {
+                "additional_kwargs": {},
+                "content": "{\n  \"message_type\": \"data_request\",\n  \"reason\": \"new_request\",\n  \"confidence\": 0.99,\n  \"active_request_action\": \"new_request\",\n  \"correction_targets\": [],\n  \"resolved_request_type\": \"data\"\n}",
+                "id": "lc_run--01a130c4-0375-7f33-85a6-15982c71e560-0",
+                "invalid_tool_calls": [],
+                "name": null,
+                "response_metadata": {
+                  "created_at": "2026-10-12T15:38:37.645804Z",
+                  "done": true,
+                  "done_reason": "stop",
+                  "eval_count": 55,
+                  "eval_duration": 1549864000,
+                  "load_duration": 6647000,
+                  "logprobs": null,
+                  "model": "llama3.2:latest",
+                  "model_name": "llama3.2:latest",
+                  "model_provider": "ollama",
+                  "prompt_eval_count": 2160,
+                  "prompt_eval_duration": 966031000,
+                  "total_duration": 2902816833
+                },
+                "tool_calls": [],
+                "type": "ai",
+                "usage_metadata": {
+                  "input_tokens": 2160,
+                  "output_tokens": 55,
+                  "total_tokens": 2215
+                }
+              },
+              "safeguard": null,
+              "stage": "classifier_output"
+            },
+            {
+              "route": "data_or_chart_request",
+              "stage": "chosen_route"
+            },
+            {
+              "stage": "lifecycle_update",
+              "update": {
+                "active_request_action": "none",
+                "active_request_text": "Start a new request: show flow in Ponte on 2026-05-10.",
+                "active_request_type": "data",
+                "aggregation": null,
+                "ambiguous_terms": [],
+                "chart_payload": null,
+                "chart_type": null,
+                "clarification_answers": [],
+                "clarification_count": 0,
+                "clarification_question": null,
+                "classification_error": null,
+                "classification_valid": true,
+                "classified_request_type": null,
+                "correction_targets": [],
+                "distinct": false,
+                "error": null,
+                "evidence_suggestions": {},
+                "execution_error": null,
+                "filters": [],
+                "final_answer": null,
+                "group_by": [],
+                "having_conditions": [],
+                "intent": null,
+                "is_complete": false,
+                "limit": null,
+                "mapping_input_text": "Start a new request: show flow in Ponte on 2026-05-10.",
+                "metric_column": null,
+                "missing_slots": [],
+                "order_by": null,
+                "output_type": "text",
+                "parsed_time_range": null,
+                "pending_ambiguous_correction_targets": [],
+                "pending_ambiguous_message": null,
+                "pending_ambiguous_request_type": null,
+                "query_result": null,
+                "raw_metric": null,
+                "request_evidence": null,
+                "request_status": "collecting",
+                "request_transition_valid": true,
+                "required_slots": [],
+                "selected_columns": [],
+                "sql_compilation_errors": [],
+                "sql_explanation": null,
+                "sql_generation_provenance": null,
+                "sql_is_safe": false,
+                "sql_query": null,
+                "sql_validation_errors": [],
+                "table_name": null,
+                "time_column": null,
+                "time_range": null,
+                "unsupported_terms": []
+              }
+            },
+            {
+              "input": {
+                "active_request_type": "data",
+                "classification_reason": "new_request",
+                "latest_user_message": "Start a new request: show flow in Ponte on 2026-05-10.",
+                "mapping_input_text": "Start a new request: show flow in Ponte on 2026-05-10.",
+                "missing_slots": [],
+                "output_type": "text"
+              },
+              "stage": "evidence_input"
+            },
+            {
+              "bare_date_parser_result": {
+                "end": "2026-05-11 00:00:00+00",
+                "kind": "absolute",
+                "relative": null,
+                "start": "2026-05-10 00:00:00+00"
+              },
+              "canonical": {
+                "aggregation_conflict": null,
+                "aggregation_phrase": null,
+                "chart_phrase": null,
+                "location_phrases": [
+                  "Ponte"
+                ],
+                "metric_phrase": "flow",
+                "time_fallback_result": {
+                  "parsed": {
+                    "end": "2026-05-11 00:00:00+00",
+                    "kind": "absolute",
+                    "relative": null,
+                    "start": "2026-05-10 00:00:00+00"
+                  },
+                  "phrase": "2026-05-10",
+                  "status": "applied"
+                },
+                "time_phrase": "2026-05-10",
+                "time_phrase_provenance": "embedded_absolute_date_fallback"
+              },
+              "parsed": {
+                "aggregation_phrase": null,
+                "chart_phrase": null,
+                "location_phrases": [
+                  "Ponte"
+                ],
+                "metric_phrase": "flow",
+                "time_phrase": null
+              },
+              "parsing_error": null,
+              "raw": {
+                "additional_kwargs": {},
+                "content": "{\n  \"metric_phrase\": \"flow\",\n  \"location_phrases\": [\"Ponte\"],\n  \"time_phrase\": null,\n  \"aggregation_phrase\": null,\n  \"chart_phrase\": null\n}",
+                "id": "lc_run--01a130c4-0ee8-7880-8782-47663d801f99-0",
+                "invalid_tool_calls": [],
+                "name": null,
+                "response_metadata": {
+                  "created_at": "2026-10-12T15:38:39.516823Z",
+                  "done": true,
+                  "done_reason": "stop",
+                  "eval_count": 43,
+                  "eval_duration": 1113936000,
+                  "load_duration": 4640375,
+                  "logprobs": null,
+                  "model": "llama3.2:latest",
+                  "model_name": "llama3.2:latest",
+                  "model_provider": "ollama",
+                  "prompt_eval_count": 1172,
+                  "prompt_eval_duration": 387872000,
+                  "total_duration": 1842915625
+                },
+                "tool_calls": [],
+                "type": "ai",
+                "usage_metadata": {
+                  "input_tokens": 1172,
+                  "output_tokens": 43,
+                  "total_tokens": 1215
+                }
+              },
+              "stage": "evidence_output",
+              "time_fallback_result": {
+                "parsed": {
+                  "end": "2026-05-11 00:00:00+00",
+                  "kind": "absolute",
+                  "relative": null,
+                  "start": "2026-05-10 00:00:00+00"
+                },
+                "phrase": "2026-05-10",
+                "status": "applied"
+              },
+              "time_phrase_provenance": "embedded_absolute_date_fallback"
+            },
+            {
+              "input": "2026-05-10",
+              "result": {
+                "end": "2026-05-11 00:00:00+00",
+                "kind": "absolute",
+                "relative": null,
+                "start": "2026-05-10 00:00:00+00"
+              },
+              "stage": "time_parser"
+            },
+            {
+              "input": {
+                "aggregation": null,
+                "available_columns": [
+                  "sensor_id",
+                  "timestamp",
+                  "type",
+                  "value",
+                  "city",
+                  "district"
+                ],
+                "distinct": false,
+                "filters": [
+                  {
+                    "column": "district",
+                    "operator": "=",
+                    "value": "Ponte"
+                  }
+                ],
+                "group_by": [],
+                "having_conditions": [],
+                "limit": 1000,
+                "metric_column": "value",
+                "order_by": "timestamp ASC",
+                "requirements_context": {
+                  "aggregations": {
+                    "supported": [
+                      "avg",
+                      "sum",
+                      "min",
+                      "max",
+                      "count"
+                    ]
+                  },
+                  "defaults": {
+                    "default_limit": 1000,
+                    "default_order_by": "timestamp ASC",
+                    "metric_column": "value",
+                    "table": "sensor_measurements",
+                    "time_column": "timestamp"
+                  },
+                  "entity_resolution": {
+                    "ambiguity": {
+                      "require_user_confirmation_for_fuzzy_match": true,
+                      "treat_fuzzy_matches_as_ambiguous": true
+                    },
+                    "fuzzy_match": {
+                      "auto_apply": false,
+                      "enabled": true,
+                      "max_suggestions": 3,
+                      "min_similarity": 0.88
+                    },
+                    "locations": {
+                      "add_parent_city_filter_for_district": false,
+                      "allow_city_only_filter": true,
+                      "allow_district_only_filter": true,
+                      "city_column": "city",
+                      "district_column": "district",
+                      "reject_city_district_mismatch": true
+                    },
+                    "unsupported_terms": {
+                      "include_unsupported_locations": true,
+                      "include_unsupported_measurement_types": true,
+                      "include_unsupported_metrics": true
+                    }
+                  },
+                  "filters": {
+                    "supported_operators": [
+                      "=",
+                      "!=",
+                      ">",
+                      ">=",
+                      "<",
+                      "<=",
+                      "IN",
+                      "BETWEEN"
+                    ]
+                  },
+                  "requirements": {
+                    "chart": {
+                      "default_x_axis": "timestamp",
+                      "default_y_axis": "value",
+                      "required_entity_groups": {
+                        "location": {
+                          "any_of": [
+                            "city",
+                            "district"
+                          ]
+                        }
+                      },
+                      "required_slots": [
+                        "metric_column",
+                        "time_range",
+                        "chart_type"
+                      ],
+                      "supported_chart_types": [
+                        "line",
+                        "bar",
+                        "table"
+                      ]
+                    },
+                    "retrieve_data": {
+                      "optional_slots": [
+                        "sensor_id",
+                        "type",
+                        "aggregation",
+                        "group_by",
+                        "limit"
+                      ],
+                      "required_entity_groups": {
+                        "location": {
+                          "any_of": [
+                            "city",
+                            "district"
+                          ]
+                        }
+                      },
+                      "required_slots": [
+                        "metric_column",
+                        "time_range"
+                      ]
+                    },
+                    "text": {
+                      "required_entity_groups": {
+                        "location": {
+                          "any_of": [
+                            "city",
+                            "district"
+                          ]
+                        }
+                      },
+                      "required_slots": [
+                        "metric_column",
+                        "time_range"
+                      ]
+                    }
+                  },
+                  "safety": {
+                    "allow_only_select": true,
+                    "max_limit": 5000,
+                    "require_limit": true
+                  }
+                },
+                "selected_columns": [
+                  "timestamp",
+                  "value"
+                ],
+                "table_name": "sensor_measurements",
+                "time_column": "timestamp",
+                "time_range": {
+                  "end": "2026-05-11 00:00:00+00",
+                  "kind": "absolute",
+                  "relative": null,
+                  "start": "2026-05-10 00:00:00+00"
+                }
+              },
+              "stage": "sql_generation_input"
+            },
+            {
+              "formatted_messages": "not applicable: deterministic compiler",
+              "provenance": "deterministic_compiler",
+              "raw_provider_response": "not applicable: no SQL-model call",
+              "sql_model_call": false,
+              "stage": "sql_generation_boundary"
+            },
+            {
+              "compilation_errors": [],
+              "compilation_plan": {
+                "aggregate_alias": null,
+                "aggregation": null,
+                "distinct": false,
+                "filter_count": 1,
+                "group_by": [],
+                "has_time_predicate": true,
+                "having_count": 0,
+                "limit": 1000,
+                "metric_column": "value",
+                "order_by": "timestamp ASC",
+                "selected_columns": [
+                  "timestamp",
+                  "value"
+                ],
+                "table_name": "sensor_measurements",
+                "time_column": "timestamp"
+              },
+              "final_sql_query": "SELECT timestamp, value FROM sensor_measurements WHERE district = 'Ponte' AND (timestamp >= TIMESTAMP('2026-05-10 00:00:00+00') AND timestamp < TIMESTAMP('2026-05-11 00:00:00+00')) ORDER BY timestamp LIMIT 1000",
+              "parsed": null,
+              "provenance": "deterministic_compiler",
+              "raw_provider_response": "not applicable: no SQL-model call",
+              "stage": "sql_generation_output"
+            }
+          ],
+          "stage_timings": [
+            {
+              "event": "start",
+              "node": "load_schema_context"
+            },
+            {
+              "elapsed_seconds": 0.01524829199843225,
+              "event": "complete",
+              "node": "load_schema_context"
+            },
+            {
+              "event": "start",
+              "node": "receive_user_message"
+            },
+            {
+              "elapsed_seconds": 0.00016804199913167395,
+              "event": "complete",
+              "node": "receive_user_message"
+            },
+            {
+              "event": "start",
+              "node": "classify_user_message"
+            },
+            {
+              "elapsed_seconds": 2.919314957998722,
+              "event": "complete",
+              "node": "classify_user_message"
+            },
+            {
+              "event": "start",
+              "node": "early_sql_safety_check"
+            },
+            {
+              "elapsed_seconds": 0.0012130830000387505,
+              "event": "complete",
+              "node": "early_sql_safety_check"
+            },
+            {
+              "event": "start",
+              "node": "start_or_update_active_request"
+            },
+            {
+              "elapsed_seconds": 0.0008427499997196719,
+              "event": "complete",
+              "node": "start_or_update_active_request"
+            },
+            {
+              "event": "start",
+              "node": "interpret_user_request"
+            },
+            {
+              "elapsed_seconds": 0.0006910000010975637,
+              "event": "complete",
+              "node": "interpret_user_request"
+            },
+            {
+              "event": "start",
+              "node": "extract_request_evidence"
+            },
+            {
+              "elapsed_seconds": 1.857320333001553,
+              "event": "complete",
+              "node": "extract_request_evidence"
+            },
+            {
+              "event": "start",
+              "node": "parse_time_phrase"
+            },
+            {
+              "elapsed_seconds": 0.0008138750017678831,
+              "event": "complete",
+              "node": "parse_time_phrase"
+            },
+            {
+              "event": "start",
+              "node": "pre_validate_request_evidence"
+            },
+            {
+              "elapsed_seconds": 0.0012525409983936697,
+              "event": "complete",
+              "node": "pre_validate_request_evidence"
+            },
+            {
+              "event": "start",
+              "node": "map_to_schema"
+            },
+            {
+              "elapsed_seconds": 15.114956916000665,
+              "event": "complete",
+              "node": "map_to_schema"
+            },
+            {
+              "event": "start",
+              "node": "validate_mapped_state"
+            },
+            {
+              "elapsed_seconds": 0.0013809580013912637,
+              "event": "complete",
+              "node": "validate_mapped_state"
+            },
+            {
+              "event": "start",
+              "node": "merge_extracted_info"
+            },
+            {
+              "elapsed_seconds": 0.0012458329983928706,
+              "event": "complete",
+              "node": "merge_extracted_info"
+            },
+            {
+              "event": "start",
+              "node": "check_completeness"
+            },
+            {
+              "elapsed_seconds": 0.0020737090017064475,
+              "event": "complete",
+              "node": "check_completeness"
+            },
+            {
+              "event": "start",
+              "node": "generate_sql"
+            },
+            {
+              "elapsed_seconds": 0.008212708999053575,
+              "event": "complete",
+              "node": "generate_sql"
+            },
+            {
+              "event": "start",
+              "node": "validate_sql_safety"
+            },
+            {
+              "elapsed_seconds": 0.001216417000250658,
+              "event": "complete",
+              "node": "validate_sql_safety"
+            },
+            {
+              "event": "start",
+              "node": "execute_sql"
+            },
+            {
+              "elapsed_seconds": 0.00043300000106683,
+              "event": "complete",
+              "node": "execute_sql"
+            },
+            {
+              "event": "start",
+              "node": "build_text_response"
+            },
+            {
+              "elapsed_seconds": 0.00017254200065508485,
+              "event": "complete",
+              "node": "build_text_response"
+            },
+            {
+              "event": "start",
+              "node": "mark_request_done"
+            },
+            {
+              "elapsed_seconds": 0.00015754199921502732,
+              "event": "complete",
+              "node": "mark_request_done"
+            },
+            {
+              "event": "start",
+              "node": "wait_for_next_message"
+            },
+            {
+              "elapsed_seconds": 0.0002155839974875562,
+              "event": "complete",
+              "node": "wait_for_next_message"
+            }
+          ],
+          "turn": 2,
+          "user_input": "Start a new request: show flow in Ponte on 2026-05-10."
+        }
+      ]
+    }
+  ],
+  "stub_executions": 2,
+  "temperatures": {
+    "answer": 0.0,
+    "clarification": 0.0,
+    "interpret": 0.0,
+    "mapping": 0.0,
+    "sql": 0.0
+  },
+  "timeout_seconds": 150
+}

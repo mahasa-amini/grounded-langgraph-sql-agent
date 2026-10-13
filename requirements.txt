@@ -1,0 +1,13 @@
+langgraph==1.2.0
+langchain==1.3.1
+langchain-core==1.4.0
+langchain-ollama==1.1.0
+python-dotenv==1.2.2
+pydantic==2.13.4
+pyyaml==6.0.3
+sqlparse==0.5.5
+sqlglot==30.21.0
+pydantic-settings==2.14.1
+typing-extensions==4.16.0
+langgraph-cli[inmem]==0.4.27
+google-cloud-bigquery==3.42.1
